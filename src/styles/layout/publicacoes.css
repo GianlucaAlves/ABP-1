@@ -58,7 +58,7 @@ fieldset {
     width: 100%;
     box-sizing: border-box;
     flex-wrap: wrap;
-
+}
 .filters {
     border-top: 2px solid transparent;
     margin: 18px 0 8px;
@@ -82,6 +82,7 @@ legend {
     justify-content: center;
     border-radius: 25px;
     background-color: #2F4F4F;
+}
 #form-filters select,
 #form-filters input {
     padding: 4px 5px;
