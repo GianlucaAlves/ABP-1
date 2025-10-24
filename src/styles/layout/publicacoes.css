@@ -1,25 +1,27 @@
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-body { 
-    font-family: Arial, sans-serif; 
-    background: #ffffff; 
-    color: #222; 
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
 }
 
 /* Container centralizado - para limitar largura da página */
-.container { 
-    max-width: 1000px; 
-    margin: 0 auto; 
-    padding: 20px; 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
+
 .page_title {
-    color:#2f4f4f;
-    margin-top:24px;
-    font-size:32px;
-    margin-bottom:8px;
+    color: #2f4f4f;
+    margin-top: 24px;
+    font-size: 32px;
+    margin-bottom: 8px;
 }
 form {
     height: fit-content;
@@ -56,6 +58,17 @@ fieldset {
     width: 100%;
     box-sizing: border-box;
     flex-wrap: wrap;
+
+.filters {
+    border-top: 2px solid transparent;
+    margin: 18px 0 8px;
+    padding-top: 6px;
+    justify-items: center;
+}
+
+#form-filters {
+    display: flex;
+    gap: 12px;
     align-items: center;
 }
 
@@ -69,6 +82,18 @@ legend {
     justify-content: center;
     border-radius: 25px;
     background-color: #2F4F4F;
+#form-filters select,
+#form-filters input {
+    padding: 4px 5px;
+    border: 1px solid #cfcfcf;
+    border-radius: 1px;
+}
+
+#form-filters button {
+    padding: 4px 6px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
     color: white;
     padding: 3px;
     border: none;
@@ -128,8 +153,9 @@ legend {
 
 
 }
-.pubs-grid{
-    display:grid;
+
+.pubs-grid {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
     margin-top: 24px;
@@ -137,37 +163,42 @@ legend {
     align-items: center;
     margin-bottom: 20px;
 }
-.pub-article{
-    width:fit-content;
-    cursor:pointer;
-    
-    
+
+.pub-article {
+    width: fit-content;
+    cursor: pointer;
+
+
 }
-.pub-pub{
+
+.pub-pub {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.pub-card{
+
+.pub-card {
     background: white;
     border: 1px solid #e6e6e6;
     border-radius: 8px;
     padding: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
     width: 300px;
-    height:350px;
+    height: 350px;
     max-width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
 .pub-cover {
-    width:100%; 
-    height: 160px; 
-    object-fit:cover;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
     border-radius: 4px;
 }
+
 .pub-title {
     font-size: 15px;
     color: #234;
@@ -179,64 +210,73 @@ legend {
     text-overflow: ellipsis;
     text-align: center;
 }
+
 .pub-authors {
     display: flex;
-    font-size:13px;
-    color:#777;
-    margin-top:auto;
+    font-size: 13px;
+    color: #777;
+    margin-top: auto;
     justify-content: center;
 }
+
 .pub-actions {
     display: flex;
     gap: 12px;
-    margin-top:auto;
+    margin-top: auto;
     justify-content: center;
 }
+
 .btn {
     padding: 6px 10px;
     border-radius: 25px;
     border: 1px solid #0574BB;
-    background:white;
-    cursor:pointer;
+    background: white;
+    cursor: pointer;
     margin-top: 12px;
     color:#0574BB;
     text-decoration: none;
 }
-#pu-line{
-    width:100%;
-    height:1px;
-    background-color:#333;
+
+#pu-line {
+    width: 100%;
+    height: 1px;
+    background-color: #333;
     margin: 10px auto 0;
-    border-radius:2px;
+    border-radius: 2px;
     margin-bottom: 1rem;
 }
 
-@media (max-width: 900px){
-    .container{
+@media (max-width: 900px) {
+    .container {
         padding: 10px;
-        width:100%;
+        width: 100%;
         box-sizing: border-box;
     }
-    .pubs-grid{
+
+    .pubs-grid {
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
     }
-    #pu-line{
+
+    #pu-line {
         width: 100%;
         max-width: 1000px;
     }
 }
+
 @media (max-width: 500px) {
-    .container{
+    .container {
         padding: 10px;
-        width:100%;
+        width: 100%;
         box-sizing: border-box;
     }
-    .pubs-grid{
+
+    .pubs-grid {
         grid-template-columns: repeat(1, 1fr);
         justify-items: center;
     }
-    #pu-line{
+
+    #pu-line {
         width: 100%;
         max-width: 1000px;
     }

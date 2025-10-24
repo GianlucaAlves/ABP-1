@@ -7,28 +7,33 @@
 section {
     margin-bottom: 2rem;
 }
+
 #title-so {
-    color:#2f4f4f;
-    font-size:2.5rem;
+    color: #2f4f4f;
+    font-size: 2.5rem;
     font-weight: 800;
 }
+
 h2 {
     font-size: 1.8rem;
     font-weight: 900;
 }
-ul{
+
+ul {
     list-style-type: none;
-    padding-left:0;
+    padding-left: 0;
 }
-main li::before{
-    content:"-";
-    color:black;
+
+main li::before {
+    content: "-";
+    color: black;
 }
+
 .so-line {
-    width:800px;
-    height:1px;
-    background-color:#333;
+    width: 800px;
+    height: 1px;
+    background-color: #333;
     margin: 10px auto 0;
-    border-radius:2px;
+    border-radius: 2px;
     margin-bottom: 1rem;
 }

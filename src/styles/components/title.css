@@ -7,16 +7,16 @@
   --color-6: #0574BB;
 }
 
-.title-line{
-    width:100%;
-    height:1px;
-    background-color:var(--color-1);
-    margin: 10px auto 0;
-    border-radius:2px;
-    margin-bottom: 1rem;
+.title-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-1);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  margin-bottom: 1rem;
 }
 
-#title{
-    color: var(--color-1);
-    font-size: 50px;
+#title {
+  color: var(--color-1);
+  font-size: 50px;
 }

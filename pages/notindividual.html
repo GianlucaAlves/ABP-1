@@ -2,251 +2,253 @@
 <html lang="pt-BR">
 
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="../src/styles/layout/notindividual.css">
-      <link rel="stylesheet" href="../src/styles/global.css">
-      <link rel="stylesheet" href="../src/styles/components/title.css">
-      <link rel="stylesheet" href="../src/styles/components/title.css">
-      <link rel="icon" type="image/x-icon" href="../src/assets/image/Logo.svg">
-      <title>AgriRSLab - Nome da Notícia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles/layout/notindividual.css">
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/components/title.css">
+    <link rel="stylesheet" href="../src/styles/components/title.css">
+    <link rel="icon" type="image/x-icon" href="../src/assets/image/Logo.svg">
+    <title>AgriRSLab - Nome da Notícia</title>
 </head>
 
 <body>
-      <header>
-            <div class="content-header">
-                <div class="logo"></div>
-                <div class="options">
-                    <div class="box">
-                        <a href="home.html"><b>Home</b></a>
-                        <div class="center">
-                            <hr>
-                        </div>
+    <header>
+        <div class="content-header">
+            <div class="logo"></div>
+            <div class="options">
+                <div class="box">
+                    <a href="home.html"><b>Home</b></a>
+                    <div class="center">
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="box">
-                        <a href="sobre.html"><b>AgriRSLab</b></a>
-                        <div class="center">
-                            <hr>
-                        </div>
-                        <div class="dropdown-content">
-                            <a href="sobre.html">Sobre</a>
-    
-                            <a href="membros.html">Membros</a>
-    
-                            <a href="projetos.html">Projetos</a>
-    
-                            <a href="atuacao.html">Áreas de atuação</a>
-                        </div>
+                </div>
+                <hr>
+                <div class="box">
+                    <a href="sobre.html"><b>AgriRSLab</b></a>
+                    <div class="center">
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="box">
-                        <a href="vagas.html"><b>Vagas</b></a>
-                        <div class="center">
-                            <hr>
-                        </div>
+                    <div class="dropdown-content">
+                        <a href="sobre.html">Sobre</a>
+
+                        <a href="membros.html">Membros</a>
+
+                        <a href="projetos.html">Projetos</a>
+
+                        <a href="atuacao.html">Áreas de atuação</a>
                     </div>
-                    <hr>
-                    <div class="selected-box">
-                        <a href="publicacoes.html"><b>Publicações</b></a>
-                        <div class="center">
-                            <hr>
-                        </div>
-                        <div class="dropdown-content">
-                            <a href="publicacoes.html">Feed</a>
-    
-                            <a href="noticias.html">Notícias</a>
-                        </div>
+                </div>
+                <hr>
+                <div class="box">
+                    <a href="vagas.html"><b>Vagas</b></a>
+                    <div class="center">
+                        <hr>
                     </div>
-    
-                    <hr>
-                    <div class="box">
-                        <a href="contato.html"><b>Contato</b></a>
-                        <div class="center">
-                            <hr>
-                        </div>
+                </div>
+                <hr>
+                <div class="selected-box">
+                    <a href="publicacoes.html"><b>Publicações</b></a>
+                    <div class="center">
+                        <hr>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="publicacoes.html">Feed</a>
+
+                        <a href="noticias.html">Notícias</a>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="box">
+                    <a href="contato.html"><b>Contato</b></a>
+                    <div class="center">
+                        <hr>
                     </div>
                 </div>
             </div>
-            <label class="sw-switch">
-                <input type="checkbox">
-                <div class="sw-slider">
-                  <span class="sw-text-left">en-us</span>
-                  <span class="sw-text-right">pt-br</span>
-                  <div class="sw-circle"></div>
+        </div>
+        <label class="sw-switch">
+            <input type="checkbox">
+            <div class="sw-slider">
+                <span class="sw-text-left">en-us</span>
+                <span class="sw-text-right">pt-br</span>
+                <div class="sw-circle"></div>
+            </div>
+        </label>
+    </header>
+
+    <div class="responsive-menu">
+        <div class="logo"></div>
+        <div class="space"></div>
+        <!-- Checkbox invisível para controlar o menu -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- Ícone hambúrguer -->
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Menu Dropdown -->
+        <nav class="menu">
+
+            <ul>
+                <label class="sw-switch">
+                    <input type="checkbox">
+                    <div class="sw-slider">
+                        <span class="sw-text-left">en</span>
+                        <span class="sw-text-right">pt-br</span>
+                        <div class="sw-circle"></div>
+                    </div>
+                </label>
+                <li><a href="home.html">Home</a></li>
+                <hr>
+
+                <li class="dropdown">
+                    <input type="checkbox" id="AgriRSLab-menu" class="dropdown-toggle">
+                    <label for="AgriRSLab-menu" class="menu-AgriRSLab">AgriRSLab <div class="icon-arrow"><img
+                                src="../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
+
+                    <div class="mbl-dropdown-content">
+                        <a href="sobre.html">Sobre</a>
+                        <a href="membros.html">Membros</a>
+                        <a href="projetos.html">Projetos</a>
+                        <a href="atuacao.html">Áreas de atuação</a>
+                    </div>
+                </li>
+
+                <hr>
+                <li><a href="vagas.html">Vagas</a></li>
+                <hr>
+                <li class="dropdown">
+                    <input type="checkbox" id="Publicacoes-menu" class="dropdown-toggle">
+                    <label for="Publicacoes-menu" class="menu-AgriRSLab">Publicações <div class="icon-arrow"><img
+                                src="../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
+
+                    <div class="mbl-dropdown-content">
+                        <a href="publicacoes.html">Feed</a>
+                        <a href="noticias.html">Notícias</a>
+                    </div>
+                </li>
+                <hr>
+                <li><a href="contato.html">Contato</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="ni-content">
+            <div class="ni-title">
+                <h1>Nome de notícia muito longo!</h1>
+                <p>Lide muito longo! Lide muito longo! Lide muito longo! Lide muito longo!
+                    muito muito muito muito muit muito muito longoooo</p>
+                <div class="ni-date">
+                    <p>Publicada em 16/09/2025</p>
                 </div>
-            </label>
-        </header>
-    
-        <div class="responsive-menu">
-            <div class="logo"></div>
-            <div class="space"></div>
-            <!-- Checkbox invisível para controlar o menu -->
-            <input type="checkbox" id="menu-toggle">
-    
-            <!-- Ícone hambúrguer -->
-            <label for="menu-toggle" class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-    
-            <!-- Menu Dropdown -->
-            <nav class="menu">
-                
-                <ul>
-                    <label class="sw-switch">
-                        <input type="checkbox">
-                        <div class="sw-slider">
-                          <span class="sw-text-left">en</span>
-                          <span class="sw-text-right">pt-br</span>
-                          <div class="sw-circle"></div>
-                        </div>
-                    </label>
-                    <li><a href="home.html">Home</a></li>
-                    <hr>
-    
-                    <li class="dropdown">
-                        <input type="checkbox" id="AgriRSLab-menu" class="dropdown-toggle">
-                        <label for="AgriRSLab-menu" class="menu-AgriRSLab">AgriRSLab <div class="icon-arrow"><img src="../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
-    
-                        <div class="mbl-dropdown-content">
-                            <a href="sobre.html">Sobre</a>
-                            <a href="membros.html">Membros</a>
-                            <a href="projetos.html">Projetos</a>
-                            <a href="atuacao.html">Áreas de atuação</a>
-                        </div>
-                    </li>
-    
-                    <hr>
-                    <li><a href="vagas.html">Vagas</a></li>
-                    <hr>
-                    <li class="dropdown">
-                        <input type="checkbox" id="Publicacoes-menu" class="dropdown-toggle">
-                        <label for="Publicacoes-menu" class="menu-AgriRSLab">Publicações <div class="icon-arrow"><img src="../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
-    
-                        <div class="mbl-dropdown-content">
-                            <a href="publicacoes.html">Feed</a>
-                            <a href="noticias.html">Notícias</a>
-                        </div>
-                    </li>
-                    <hr>
-                    <li><a href="contato.html">Contato</a></li>
-                    
-                </ul>
-            </nav>
+            </div>
         </div>
 
-      <main>
-            <div class="ni-content">
-                  <div class="ni-title">
-                        <h1>Nome de notícia muito longo!</h1>
-                        <p>Lide muito longo! Lide muito longo! Lide muito longo! Lide muito longo!
-                              muito muito muito muito muit muito muito longoooo</p>
-                        <div class="ni-date">
-                              <p>Publicada em 16/09/2025</p>
-                        </div>
-                  </div>
-            </div>
+        <div class="ni-content">
+            <div class="ni-img"></div>
+        </div>
 
-            <div class="ni-content">
-                  <div class="ni-img"></div>
-            </div>
-
-            <div class="ni-content">
-                  <div class="ni-text">
-                        <p>
-                              Para pequenos produtores, o cultivo do morango já representava uma alternativa de alta
-                              rentabilidade, essencial para o
-                              sustento das famílias e a manutenção de suas propriedades. Como mencionado, a agricultura
-                              familiar é a que mais tem se
-                              beneficiado da popularização do doce.
-                              <br>
-                              Muitos produtores que se enquadram neste tipo de agricultura estão conseguindo não apenas
-                              equilibrar as contas, mas
-                              também realizar investimentos que antes pareciam distantes.
-                              <br>
-                              No Espírito Santo, por exemplo, a produção de morango já havia mostrado um aumento durante
-                              2024. O crescimento foi de
-                              5,4%, totalizando 32.884 toneladas, o que movimentou cerca de R$ 396,4 milhões em renda
-                              rural.
-                              <br>
-                              A alta produtividade do Estado, que conta com mais de 110 toneladas por hectare, tem
-                              ganhado ainda mais visibilidade da
-                              cadeia produtiva local por conta do morango do amor.
-                              A Federação da Agricultura e Pecuária do Estado (Faemg) de Minas Gerais também mostrou os
-                              impactos positivos para a
-                              região. Um produtor de morangos graúdos que vendia uma caixa com 12 unidades de morango
-                              por R$10 conseguiu subir o preço
-                              para R$ 15.
-                              <br>
-                              Outro, que entrega cerca de 2 mil caixas por semana no Ceasa de Belo Horizonte, aumentou o
-                              preço da caixa de R$12 para
-                              R$25-R$30.
-                        </p>
-                        <div class="ni-reference">
-                              <p>
-                                    ROCKCONTENT.Referência de Site ABNT: veja como fazer com exemplos para não
-                                    errar. Rockcontent, 2023. Disponível
-                                    em:
-                                    <https: //rockcontent.com/br/blog/referencia-de-site-abnt />. Acesso em: 15
-                                    set. 2025. 
-                              </p>
-                        </div>
-                  </div>
-            </div>
-      </main>
-      <footer>
-            <div class="footer">
-                <div class="footer-title"><a href=""></a><b>AgriRSLab</b></div>
-                <div class="footer-options">
-    
-                    <b><a href="home.html">Home</a></b>
-                    <b><a href="sobre.html">Sobre</a></b>
-                    <b><a href="membros.html">Membros</a></b>
-                    <b><a href="projetos.html">Projetos</a></b>
-                    <b><a href="atuacao.html">Áreas de atuação</a></b>
-                    <b><a href="vagas.html">Vagas</a></b>
-                    <b><a href="publicacoes.html">Feed</a></b>
-                    <b><a href="noticias.html">Notícias</a></b>
-                    <b><a href="contato.html">Contato</a></b>
-    
-                </div>
-                <hr>
-                <div class="infos">
-                    <div class="dev-team">
-                        <p>©2025 Nighthawks. All rights reserved.</p>
-                    </div>
-                    <div class="social-midia">
-                        <a href=""><img src="../src/assets/image/linkedin.png" alt=""></a>
-                        <a href=""><img src="../src/assets/image/instagram.png" alt=""></a>
-                    </div>
+        <div class="ni-content">
+            <div class="ni-text">
+                <p>
+                    Para pequenos produtores, o cultivo do morango já representava uma alternativa de alta
+                    rentabilidade, essencial para o
+                    sustento das famílias e a manutenção de suas propriedades. Como mencionado, a agricultura
+                    familiar é a que mais tem se
+                    beneficiado da popularização do doce.
+                    <br>
+                    Muitos produtores que se enquadram neste tipo de agricultura estão conseguindo não apenas
+                    equilibrar as contas, mas
+                    também realizar investimentos que antes pareciam distantes.
+                    <br>
+                    No Espírito Santo, por exemplo, a produção de morango já havia mostrado um aumento durante
+                    2024. O crescimento foi de
+                    5,4%, totalizando 32.884 toneladas, o que movimentou cerca de R$ 396,4 milhões em renda
+                    rural.
+                    <br>
+                    A alta produtividade do Estado, que conta com mais de 110 toneladas por hectare, tem
+                    ganhado ainda mais visibilidade da
+                    cadeia produtiva local por conta do morango do amor.
+                    A Federação da Agricultura e Pecuária do Estado (Faemg) de Minas Gerais também mostrou os
+                    impactos positivos para a
+                    região. Um produtor de morangos graúdos que vendia uma caixa com 12 unidades de morango
+                    por R$10 conseguiu subir o preço
+                    para R$ 15.
+                    <br>
+                    Outro, que entrega cerca de 2 mil caixas por semana no Ceasa de Belo Horizonte, aumentou o
+                    preço da caixa de R$12 para
+                    R$25-R$30.
+                </p>
+                <div class="ni-reference">
+                    <p>
+                        ROCKCONTENT.Referência de Site ABNT: veja como fazer com exemplos para não
+                        errar. Rockcontent, 2023. Disponível
+                        em:
+                        <https: //rockcontent.com/br/blog/referencia-de-site-abnt />. Acesso em: 15
+                        set. 2025. 
+                    </p>
                 </div>
             </div>
-        </footer>
-        
-        <div class="responsive-footer">
-        
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-title"><a href=""></a><b>AgriRSLab</b></div>
+            <div class="footer-options">
+
+                <b><a href="home.html">Home</a></b>
+                <b><a href="sobre.html">Sobre</a></b>
+                <b><a href="membros.html">Membros</a></b>
+                <b><a href="projetos.html">Projetos</a></b>
+                <b><a href="atuacao.html">Áreas de atuação</a></b>
+                <b><a href="vagas.html">Vagas</a></b>
+                <b><a href="publicacoes.html">Feed</a></b>
+                <b><a href="noticias.html">Notícias</a></b>
+                <b><a href="contato.html">Contato</a></b>
+
+            </div>
+            <hr>
             <div class="infos">
-                <div class="footer-title"><a href="#"></a><b>AgriRSLab</b></div>
-                <hr>
-                <div class="footer-bottom">
+                <div class="dev-team">
+                    <p>©2025 Nighthawks. All rights reserved.</p>
+                </div>
+                <div class="social-midia">
+                    <a href=""><img src="../src/assets/image/linkedin.png" alt=""></a>
+                    <a href=""><img src="../src/assets/image/instagram.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="responsive-footer">
+
+        <div class="infos">
+            <div class="footer-title"><a href="#"></a><b>AgriRSLab</b></div>
+            <hr>
+            <div class="footer-bottom">
                 <div class="dev-team">
                     <p>©2025 Nighthawks. <br> All rights reserved.</p>
                 </div>
-                </div>
-                <div class="responsive-social">
+            </div>
+            <div class="responsive-social">
                 <div class="social-midia">
                     <a href="#" class="linkedin2"><img src="../src/assets/image/linkedin.png" alt=""></a>
                     <a href="#" class="instagram2"><img src="../src/assets/image/instagram.png" alt=""></a>
                 </div>
             </div>
-            </div>
-    
-            </label>
         </div>
-        <script src="../src/scripts/switch.js" defer></script>
-</div>
+
+        </label>
+    </div>
+    <script src="../src/scripts/switch.js" defer></script>
+    </div>
 </body>
 
 </html>

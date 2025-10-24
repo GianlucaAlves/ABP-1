@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-1: #2F4F4F;
     --color-2: #ffffff;
     --color-3: #000000;
@@ -7,18 +7,18 @@
     --color-6: #0574BB;
 }
 
-main{
+main {
     width: 80%;
     margin-left: 10%;
     margin-top: 30px;
 }
 
-iframe{
+iframe {
     border-radius: 30px;
     margin-bottom: 10px;
 }
 
-.co-form-content{
+.co-form-content {
     margin-left: 10%;
     width: 80%;
     background-color: var(--color-4);
@@ -30,7 +30,7 @@ iframe{
     margin-top: 50px;
 }
 
-.co-form-left{
+.co-form-left {
     width: 40%;
     margin-left: 5%;
     margin-right: 5%;
@@ -40,7 +40,7 @@ iframe{
     justify-content: center;
 }
 
-.co-form-right{
+.co-form-right {
     width: 50%;
     padding-left: 5%;
     padding-right: 5%;
@@ -50,13 +50,13 @@ iframe{
 
 }
 
-.co-social-media{
+.co-social-media {
     display: flex;
     width: 100%;
     justify-content: center;
 }
 
-.co-linkedin{
+.co-linkedin {
     background-image: url(../../assets/svg/Linkedin-verde.svg);
     background-size: contain;
     background-position: center;
@@ -65,7 +65,7 @@ iframe{
     width: 40px;
 }
 
-.co-instagram{
+.co-instagram {
     background-image: url(../../assets/svg/Instagram-verde.svg);
     background-size: contain;
     background-position: center;
@@ -74,21 +74,21 @@ iframe{
     width: 40px;
 }
 
-form .co-form-title{
+form .co-form-title {
     width: 100%;
     text-align: center;
     color: var(--color-2);
     margin-bottom: 30px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     height: 700px;
     justify-content: center;
 }
 
-input{
+input {
     border-radius: 10px;
     margin-bottom: 10px;
     height: 40px;
@@ -98,7 +98,7 @@ input{
     padding-right: 10px;
 }
 
-textarea{
+textarea {
     border-radius: 10px;
     height: 300px;
     background-color: var(--color-4);
@@ -106,7 +106,7 @@ textarea{
     padding-right: 10px;
 }
 
-button{
+button {
     height: 40px;
     border-radius: 20px;
     width: 100px;
@@ -114,40 +114,44 @@ button{
     border: none;
 }
 
-.co-button{
+.co-button {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
     margin-top: 10px;
 }
 
-.co-form-left p{
+.co-form-left p {
     margin-bottom: 10px;
 }
-@media (max-width: 900px){
-    .co-form-content{
+
+@media (max-width: 900px) {
+    .co-form-content {
         flex-direction: column;
         height: auto;
         background-color: #00000000;
         width: 100%;
         margin: 0;
     }
-    .co-form-left{
+
+    .co-form-left {
         width: 100%;
     }
-    .co-form-right{
+
+    .co-form-right {
         width: 100%;
     }
-    .co-social-media{
+
+    .co-social-media {
         margin-top: 20px;
         margin-bottom: 20px;
     }
 }
 
 .sw-switch {
-      position: absolute;
-      width: 90px;
-      height: 20px;
-      top: 6px;
-      margin-left: 87%;
-    }
+    position: absolute;
+    width: 90px;
+    height: 20px;
+    top: 6px;
+    margin-left: 87%;
+}

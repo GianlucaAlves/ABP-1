@@ -1,18 +1,20 @@
-.main-buttons-pos{
-    display:flex;
+.main-buttons-pos {
+    display: flex;
     margin-left: 70%;
-    gap:10px;
+    gap: 10px;
 }
-.main-buttons{
+
+.main-buttons {
     border-radius: 25px;
     background: #0574BB;
     padding: 8px;
-    border:none;
-    cursor:pointer;
-    color:white;
+    border: none;
+    cursor: pointer;
+    color: white;
 }
-@media (max-width:900px){
-    .main-buttons-pos{
+
+@media (max-width:900px) {
+    .main-buttons-pos {
         margin: 0 auto;
     }
 }

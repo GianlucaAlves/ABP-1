@@ -3,95 +3,101 @@
 }
 
 hr {
-    width:70%;
-    height:0%;
-    margin: 10px auto;
+  width: 70%;
+  height: 0%;
+  margin: 10px auto;
 }
 
-.atu-title{
+.atu-title {
   padding-top: 20px;
 }
 
 #atu-text {
-    color: #2F4F4F;
-    width: 60%;
-    align-items:center;
-    display:flex;
-    justify-content: center;
-    margin: 0%
+  color: #2F4F4F;
+  width: 60%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0%
 }
+
 .atu-images {
   display: flex;
-  justify-content: space-evenly;    /* centraliza horizontalmente */
-  gap: 30px;                  
+  justify-content: space-evenly;
+  /* centraliza horizontalmente */
+  gap: 30px;
   text-align: center;
   width: 50%;
 }
 
-.atu-images  div {
+.atu-images div {
   display: flex;
-  flex-direction: column;      /* empilha a imagem, título e checkbox */
-  align-items: center;         /* centraliza horizontalmente */
-  width: 220px;              
+  flex-direction: column;
+  /* empilha a imagem, título e checkbox */
+  align-items: center;
+  /* centraliza horizontalmente */
+  width: 220px;
 }
 
 
-.atu-img1{
+.atu-img1 {
   background-image: url(../../assets/image/monit_mapeamento.png);
-   width: 200px;
-   height: 200px ;
-   background-size: contain;
-   background-position: center;
-   background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
-.atu-img2{
+.atu-img2 {
   background-image: url(../../assets/image/analise_impactos.png);
-   width: 200px;
-   height: 200px ;
-   margin-left: 10% ;
-   background-size: contain;
-   background-position: center;
-   background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  margin-left: 10%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
 }
-.atu-img3{
+
+.atu-img3 {
   background-image: url(../../assets/image/estima_analise.png);
-   width: 200px;
-   height: 200px ;
-   background-size: contain;
-   margin-left: 5% ;
-   background-position: center;
-   background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  margin-left: 5%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.atu-img4{
+
+.atu-img4 {
   background-image: url(../../assets/image/feno.png);
-   width: 200px;
-   height: 200px ;
-   background-size: contain;
-   background-position: center;
-   background-repeat: no-repeat;
-   margin-top: 5%;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 5%;
 }
 
-div #fenologia{
+div #fenologia {
   margin-top: 5%;
-} 
+}
 
-div #estimativas{
+div #estimativas {
   margin-left: 20px;
 }
- 
-  .btn-name{
-    text-decoration: none;
-    margin: 25%;
-    font-size: 20px;
-    color: var(--color-2);
-  }
+
+.btn-name {
+  text-decoration: none;
+  margin: 25%;
+  font-size: 20px;
+  color: var(--color-2);
+}
 
 
-  .hidden {
+.hidden {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
@@ -100,32 +106,33 @@ div #estimativas{
   text-align: left;
 }
 
-.box-content:checked ~ .hidden {
-opacity: 1;
-max-height: 500px;
-padding: 10px;
-background-color: #007bff;
-color: var(--color-4);  
-border-radius: 12px;
-padding: 12px;
-opacity: 1;
-margin-top: 10px;
-text-align:start;
+.box-content:checked~.hidden {
+  opacity: 1;
+  max-height: 500px;
+  padding: 10px;
+  background-color: #007bff;
+  color: var(--color-4);
+  border-radius: 12px;
+  padding: 12px;
+  opacity: 1;
+  margin-top: 10px;
+  text-align: start;
 
 }
 
 
 .box-content {
-  appearance: none;  
-  width: 40px;        
+  appearance: none;
+  width: 40px;
   height: 40px;
   border-radius: 50%;
   background: #007bff;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative; /* permite usar ::before */
-   margin-bottom: 10px;
-  
+  position: relative;
+  /* permite usar ::before */
+  margin-bottom: 10px;
+
 }
 
 /* Adiciona o "+" */
@@ -144,39 +151,40 @@ text-align:start;
   content: "-";
 }
 
-.btn-projeto{
-display: flex;
-justify-content: center;
-align-items: center;
-margin-left: 45%;
-border: none;
-background-color: #007bff;
-margin: 20px auto;          
-padding: 12px 30px; 
-border-radius: 50px;        
-width: 100px;
-height: 40px;
+.btn-projeto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 45%;
+  border: none;
+  background-color: #007bff;
+  margin: 20px auto;
+  padding: 12px 30px;
+  border-radius: 50px;
+  width: 100px;
+  height: 40px;
 }
 
-.atu-container{
+.atu-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
 @media (max-width: 1300px) {
-.atu-container{
-  flex-direction: column;
-  justify-content: center;
-}
-.atu-images{
-  width: 100%;
-}
+  .atu-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .atu-images {
+    width: 100%;
+  }
 }
 
 @media (max-width: 900px) {
-  .atu-images{
+  .atu-images {
     display: grid;
   }
-  
-  }
+
+}

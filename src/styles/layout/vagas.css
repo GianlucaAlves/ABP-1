@@ -1,173 +1,189 @@
-pub/*Bloco Titulo*/
-#va-title{
+pub
+
+/*Bloco Titulo*/
+#va-title {
     margin-top: 5vh;
 }
-hr{
+
+hr {
     width: 80%;
     justify-self: center;
-    margin-top: 5px;   
+    margin-top: 5px;
 }
 
 
-#va-title__info{
+#va-title__info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: end;
 }
 
-#va-title__info>p{
+#va-title__info>p {
     margin-bottom: 0;
     margin-top: 5px;
 }
 
-#va-title__info-nav{
+#va-title__info-nav {
     width: 200px;
     display: flex;
     justify-content: space-between;
 }
 
 
-#va-title__info-nav>span>img{
+#va-title__info-nav>span>img {
     color: #2F4F4F;
 }
 
 /*Bloco conteúdo*/
-#va-content{
+#va-content {
     margin-top: 3%;
 
 }
-.va-content__block{
+
+.va-content__block {
     height: 100px;
     margin-bottom: 1.5vw;
     display: flex;
     flex-direction: column;
 }
 
-.va-content__block>p{
+.va-content__block>p {
     margin: 0;
 }
-.va-content__block-title{
+
+.va-content__block-title {
     margin-bottom: 0.5rem;
 }
 
-.va-content__block-title>a{
+.va-content__block-title>a {
     text-decoration: none;
     color: black;
 }
 
-.va-content__block-desc{
+.va-content__block-desc {
     margin-bottom: 0;
-    font-size:large;
+    font-size: large;
 }
-.va-content__block-date{
+
+.va-content__block-date {
     font-style: italic;
     padding-top: 5px;
 }
 
 
 /*Break-Point 1800*/
-@media (max-width: 1800px){
-    #va-title>h1{
+@media (max-width: 1800px) {
+    #va-title>h1 {
         font-size: 45px;
     }
-    .va-content__block{
-        height:fit-content;
+
+    .va-content__block {
+        height: fit-content;
         margin-bottom: 30px;
     }
-    .va-content__block-title{
+
+    .va-content__block-title {
         font-size: 25px;
     }
-    .va-content__block-desc{
+
+    .va-content__block-desc {
         font-size: 20px;
     }
-    .va-content__block-date{
+
+    .va-content__block-date {
         font-size: 18px;
     }
 }
 
 /*Break-Point 800*/
-@media (max-width: 800px){ 
-    #va-title>h1{
+@media (max-width: 800px) {
+    #va-title>h1 {
         font-size: 40px;
     }
 
-    #va-title__info-nav_title{
+    #va-title__info-nav_title {
         display: none;
     }
 
-    #va-title__info-nav{
+    #va-title__info-nav {
         justify-content: center;
     }
 
-    .va-content__block-desc{
+    .va-content__block-desc {
         font-size: 20px;
     }
-    .va-content__block-date{
+
+    .va-content__block-date {
         font-size: 18px;
     }
 }
 
 /*Break-Point 700*/
-@media (max-width: 700px){
-    .va-content__block-desc{
+@media (max-width: 700px) {
+    .va-content__block-desc {
         font-size: 20px;
     }
-    .va-content__block-date{
+
+    .va-content__block-date {
         font-size: 18px;
     }
 }
 
 /*Break-Point 600*/
-@media (max-width: 600px){
-    #va-title>h1{
+@media (max-width: 600px) {
+    #va-title>h1 {
         font-size: 35px;
     }
 
-    #va-title__info-nav{
+    #va-title__info-nav {
         width: 30%;
         justify-content: center;
     }
 }
 
 /*Break-Point 400*/
-@media (max-width: 400px){
-    
-    #va-title>h1{
+@media (max-width: 400px) {
+
+    #va-title>h1 {
         font-size: 35px;
     }
-    #va-title__info>p{
+
+    #va-title__info>p {
         font-size: 18px;
         margin-right: 20px;
     }
 
-    .va-content__block-title{
+    .va-content__block-title {
         font-size: 25px;
     }
-    .va-content__block-date{
+
+    .va-content__block-date {
         font-size: 15px;
     }
 }
 
 /*Break-Point 300*/
-@media (max-width: 300px){
-    #va-title>h1{
+@media (max-width: 300px) {
+    #va-title>h1 {
         font-size: 33px;
     }
 
-    #va-title__info>p{
+    #va-title__info>p {
         font-size: 15px;
         margin-right: 20px;
     }
-    .va-content__block-title{
+
+    .va-content__block-title {
         font-size: 25px;
     }
 
-    .va-content__block-desc{
+    .va-content__block-desc {
         font-size: 18px;
         margin-bottom: 10px;
     }
-    .va-content__block-date{
+
+    .va-content__block-date {
         font-size: 16px;
     }
 }

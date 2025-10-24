@@ -25,33 +25,36 @@
   margin-left: 5%;
   margin-right: 10%;
   border-style: none;
- 
+
 
 }
 
-.cr-formup{
+.cr-formup {
   width: 100%;
   justify-content: space-between;
-  
+
   display: flex;
   margin-left: 5%;
-  
-}
-.cr-formleft{
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  
 
 }
-.cr-formright{
+
+.cr-formleft {
   display: flex;
   flex-direction: column;
   width: 40%;
-  
+
+
 }
-.formcontainer{
-  gap:30px
+
+.cr-formright {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+
+}
+
+.formcontainer {
+  gap: 30px
 }
 
 input[type="file"] {
@@ -73,7 +76,8 @@ input[type="file"] {
   margin-bottom: 9px;
 }
 
-input[type=text],textarea{
+input[type=text],
+textarea {
   padding-left: 10px;
 }
 
@@ -95,7 +99,7 @@ input[type=text],textarea{
 #dat {
   border-radius: 10px;
   border-color: #2F4F4F;
-  
+
 
 }
 
@@ -121,18 +125,20 @@ input[type=text],textarea{
 
 
 @media (max-width: 768px) {
-  .cr-formup{
+  .cr-formup {
     margin-bottom: 5px;
     display: block;
-    
+
 
 
   }
-  .cr-formleft{
+
+  .cr-formleft {
     width: 100%;
   }
-  .cr-formright{
+
+  .cr-formright {
     width: 100%;
-    
+
   }
 }
