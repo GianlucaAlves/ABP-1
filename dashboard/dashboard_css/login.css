@@ -8,45 +8,61 @@ body {
   margin: 0;
 }
 
-.login-container {
-  background-color: white;
-  padding: 30px;
+/* Contêiner principal */
+.wrapper {
+  display: flex;
+  width: 800px;
+  height: 450px;      /* altura fixa do card */
+  background: #245C4D;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 320px;
+  overflow: hidden;   /* importante para a imagem ficar contida */
+}
+
+/* Painel da imagem */
+.image-panel {
+  flex: 1; /* ocupa metade */
+  background-image: url("../../src/assets/image/pc_home_carrosel2.webp");
+  background-size: cover;       /* cobre toda a área */
+  background-position: center;  /* centraliza */
+  background-repeat: no-repeat; 
+}
+
+/* Área de login */
+.login-container {
+  flex: 1; /* metade do card */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
   text-align: center;
+  background: #245C4D;
 }
 
 .login-container h2 {
+  color: #fff;
   margin-bottom: 20px;
-  color: #333;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  max-width: 280px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
 }
 
 .login-container input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 8px;
 }
 
 .login-container button {
-  width: 100%;
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
   border: none;
-  border-radius: 8px;
+  background: #007bff;
+  color: #fff;
   cursor: pointer;
-  transition: background 0.3s;
 }
-
 .login-container button:hover {
-  background-color: #0056b3;
-}
-
-#error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
+  background: #0056b3;
 }

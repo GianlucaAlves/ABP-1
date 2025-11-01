@@ -1,123 +1,66 @@
-/* === RESET BÁSICO === */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* === ESTILO GERAL === */
 body {
-  background-color: #f4f6f8;
-  color: #333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  background-color: #f8f9fa;
 }
 
-/* === CABEÇALHO === */
-header {
-  background-color: #1e293b;
-  color: #fff;
-  padding: 1.2rem 2rem;
+.welcome {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-  font-size: 1.5rem;
-  letter-spacing: 0.5px;
-}
-
-#logoutBtn {
-  background-color: #ef4444;
-  border: none;
-  color: #fff;
-  font-weight: 500;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#logoutBtn:hover {
-  background-color: #dc2626;
-}
-
-/* === CONTEÚDO PRINCIPAL === */
-main {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
-  padding: 2rem;
+  gap: 15px;
+  padding: 20px;
+  text-align: center;
 }
 
-/* === SEÇÕES DO DASHBOARD === */
-section {
+.welcome h1 {
+  color: #004d40;
+  margin: 0;
+}
+
+.welcome p {
+  color: #666;
+  margin: 5px 0 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
   width: 100%;
-  max-width: 500px;
-  transition: transform 0.2s ease;
+  height: 180px;
+  object-fit: cover;
 }
 
-section:hover {
-  transform: translateY(-2px);
+.full-card h2 {
+  color: #007bff;
+  font-size: 2rem;
+  margin: 15px 0 10px;
+  text-align: center;
 }
 
-section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #1e293b;
-}
-
-/* === INFORMAÇÕES DO USUÁRIO === */
-#userInfo p {
-  margin-bottom: 0.5rem;
+.card p {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
   font-size: 0.95rem;
 }
 
-#userInfo span {
-  color: #2563eb;
-  font-weight: 600;
-}
-
-/* === LISTA DE AÇÕES === */
-#actions ul {
-  list-style: none;
-  padding: 0;
-}
-
-#actions li {
-  margin-bottom: 0.6rem;
-}
-
-#actions a {
-  text-decoration: none;
-  color: #2563eb;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-#actions a:hover {
-  color: #1e40af;
-}
-
-/* === RESPONSIVIDADE === */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  section {
-    width: 90%;
+/* Responsivo */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
 }

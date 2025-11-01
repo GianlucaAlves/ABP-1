@@ -43,17 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Exibe informações do usuário
-  userName.textContent = userData.name;
-  userEmail.textContent = userData.email;
-  userRole.textContent = userData.role;
-
-  // Exibe ou oculta itens de acordo com a função
-  const adminElements = document.querySelectorAll(".admin-only");
-
-  if (userData.role !== "admin") {
-    adminElements.forEach((el) => (el.style.display = "none"));
-  }
+ 
 
   // Botão de sair
   document.getElementById("logoutBtn").addEventListener("click", () => {
