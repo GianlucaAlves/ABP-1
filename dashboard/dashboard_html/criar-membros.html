@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Membro</title>
+  <link rel="stylesheet" href="../dashboard_css/criar-membros.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Criar Novo Membro</h1>
+    <form id="membroForm">
+      <label for="me_nome">Nome:</label>
+      <input type="text" id="me_nome" required>
+
+      <label for="me_cpf">CPF:</label>
+      <input type="text" id="me_cpf" required>
+
+      <label for="me_email">Email:</label>
+      <input type="email" id="me_email" required>
+
+      <label for="me_senha">Senha:</label>
+      <input type="password" id="me_senha" required>
+
+      <label for="me_cargo">Cargo:</label>
+      <select id="me_cargo">
+        <option value="">Selecione</option>
+      </select>
+
+      <label for="me_administrador">
+        <input type="checkbox" id="me_administrador"> Administrador
+      </label>
+
+      <button type="submit">Criar Membro</button>
+    </form>
+
+    <div id="msg"></div>
+  </div>
+
+  <script src="../dashboard_js/criar-membros.js"></script>
+</body>
+</html>

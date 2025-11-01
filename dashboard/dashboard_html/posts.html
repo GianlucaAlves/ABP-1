@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD Conteúdos</title>
+  <link rel="stylesheet" href="../dashboard_css/posts.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Gerenciar Conteúdos</h1>
+    <!-- FORMULÁRIO DE CRIAÇÃO/EDIÇÃO -->
+    <form id="conteudoForm">
+      <input type="hidden" id="id_conteudo">
+
+      <label>Título</label>
+      <input type="text" id="co_titulo" required>
+
+      <label>Autor (ID)</label>
+      <input type="number" id="co_autor" required>
+
+      <label>Tipo</label>
+      <select id="co_tipo_conteudo" required>
+        <option value="">Selecione</option>
+        <option value="1">Publicação</option>
+        <option value="2">Notícia</option>
+        <option value="3">Projeto</option>
+        <option value="4">Vaga de Estágio</option>
+      </select>
+
+      <label>PDF (URL)</label>
+      <input type="text" id="co_pdf">
+
+      <label>Citação</label>
+      <textarea id="co_citacao"></textarea>
+
+      <label>DOI</label>
+      <input type="text" id="co_doi">
+
+      <label>Lide</label>
+      <textarea id="co_lide"></textarea>
+
+      <label>Status</label>
+      <input type="text" id="co_status">
+
+      <label>Data Início</label>
+      <input type="date" id="co_data_inicio">
+
+      <label>Data Término</label>
+      <input type="date" id="co_data_termino">
+
+      <label>Objetivo</label>
+      <textarea id="co_objetivo"></textarea>
+
+      <label>Requisitos</label>
+      <textarea id="co_requisitos"></textarea>
+
+      <label>Plano de Trabalho</label>
+      <textarea id="co_plano_trabalho"></textarea>
+
+      <label>Atividades</label>
+      <textarea id="co_atividades"></textarea>
+
+      <button type="submit">Salvar Conteúdo</button>
+    </form>
+    <script src="../dashboard_js/posts.js"></script>
+</body>
+
+</html>

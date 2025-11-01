@@ -1,0 +1,123 @@
+/* === RESET BÁSICO === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === ESTILO GERAL === */
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === CABEÇALHO === */
+header {
+  background-color: #1e293b;
+  color: #fff;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+#logoutBtn {
+  background-color: #ef4444;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#logoutBtn:hover {
+  background-color: #dc2626;
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* === SEÇÕES DO DASHBOARD === */
+section {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #1e293b;
+}
+
+/* === INFORMAÇÕES DO USUÁRIO === */
+#userInfo p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+#userInfo span {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* === LISTA DE AÇÕES === */
+#actions ul {
+  list-style: none;
+  padding: 0;
+}
+
+#actions li {
+  margin-bottom: 0.6rem;
+}
+
+#actions a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+#actions a:hover {
+  color: #1e40af;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  section {
+    width: 90%;
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Listar Posts</title>
+  <link rel="stylesheet" href="../dashboard_css/listar-posts.css">
+</head>
+<body>
+  <h1>Lista de Conteúdos</h1>
+
+  <div class="filter-container">
+    <label for="filterTipo">Filtrar por tipo:</label>
+    <select id="filterTipo">
+      <option value="">Todos</option>
+      <option value="1">Notícias</option>
+      <option value="2">Publicações</option>
+      <option value="3">Projetos</option>
+      <option value="4">Vagas de Estágio</option>
+    </select>
+  </div>
+
+  <table id="conteudoTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Tipo</th>
+        <th>Data</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Conteúdos carregados via JS -->
+    </tbody>
+  </table>
+
+  <script src="../dashboard_js/listar-posts.js"></script>
+</body>
+</html>

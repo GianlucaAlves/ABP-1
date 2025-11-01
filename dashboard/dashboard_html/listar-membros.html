@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Membros</title>
+  <link rel="stylesheet" href="../dashboard_css/listar-membros.css">
+</head>
+<body>
+  <h1>Lista de Membros</h1>
+
+  <div class="filter-container">
+    <label for="filterCargo">Filtrar por Cargo:</label>
+    <select id="filterCargo">
+      <option value="">Todos</option>
+      <!-- Opcional: preencher cargos dinamicamente via JS -->
+    </select>
+  </div>
+
+  <table id="membrosTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Email</th>
+        <th>Cargo</th>
+        <th>Administrador</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Membros carregados via JS -->
+    </tbody>
+  </table>
+
+  <script src="../dashboard_js/listar-membros.js"></script>
+</body>
+</html>

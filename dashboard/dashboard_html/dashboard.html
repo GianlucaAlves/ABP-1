@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Agência de Sensoriamento Remoto</title>
+  <link rel="stylesheet" href="../dashboard_css/dashboard.css">
+  <script src="../scripts/dashboard.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Bem-vindo ao Painel da Agência</h1>
+    <button id="logoutBtn">Sair</button>
+  </header>
+
+  <main>
+    <section id="userInfo">
+      <h2>Informações do Usuário</h2>
+      <p><strong>Nome:</strong> <span id="userName"></span></p>
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      <p><strong>Função:</strong> <span id="userRole"></span></p>
+    </section>
+
+    <section id="actions">
+      <h2>Ações Disponíveis</h2>
+      <ul>
+        <li class="admin-only"><a href="./criar-membros.html">Cadastrar membro</a></li>
+        <li><a href="./listar-membros.html">Lista de membros</a></li>
+        <li><a href="./posts.html">Criar postagens</a></li>
+        <li><a href="./listar-posts.html">Lista de conteúdos</a></li>
+        
+      </ul>
+    </section>
+  </main>
+
+  
+</body>
+</html>
