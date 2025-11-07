@@ -7,6 +7,7 @@
     --color-6: #0574BB;
 }
 
+$color-primary-white: rgb(240, 240, 240);
 /* ========================================================= */
 /* ESTILO FINAL E SIMPLIFICADO PARA OS CARROSSÉIS       */
 /* ========================================================= */
@@ -221,12 +222,19 @@ h4 {
     justify-content: space-between;
 }
 
+.ho-title {
+    margin: 30px;
+}
+
+
+
 .ho-txtomateria {
     width: 40%;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 0px 20px 20px 0px;
     text-align: justify;
+    margin: 0px 20px 60px 0px;
 }
 
 .ho-imgmateria {
@@ -241,105 +249,185 @@ h4 {
 
 .ho-caixaazul {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    /* justify-content: space-around; */
     /* ou space-between, ajuste como preferir */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* Permite que os cards quebrem para a linha de baixo em telas menores */
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .ho-card {
-    width: 22%;
+
+  width: 24rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: $color-primary-white;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  margin :10px;
+
+    /* width: 22%; */
     /* Um pouco mais de espaço entre eles */
-    min-width: 250px;
+    /* min-width: 250px; */
     /* Largura mínima para evitar que fiquem muito espremidos */
-    margin: 10px;
-    text-decoration: none;
+    /* margin: 10px;
+    text-decoration: none; */
     /* Remove o sublinhado do link */
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .ho-titulo-cards {
     /* MUDOU DE # PARA . */
-    font-family: Arial, Helvetica, sans-serif;
-    color: #0574BB;
+    /* font-family: Arial, Helvetica, sans-serif;
+    
     text-align: center;
-    width: 100%;
+    width: 100%; */
+    color:blue;
+     position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    
+    transition: inset .3s .3s ease-out;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
+&:hover .ho-titulo-cards {
+    inset: auto auto 220px 30px;
+    transition: inset .3s ease-out;
+  }
+
+ 
+
 .ho-cxazul {
-    width: 100%;
+    /* width: 100%;
     height: 300px;
     align-items: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: var(--color-6);
-    border-radius: 20px;
+    border-radius: 20px; */
 }
 
 .ho-txt-cxazul {
-    color: var(--color-2);
+    /* color: var(--color-2);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
-    display: flex;
+    
     justify-content: center;
     align-items: center;
     font-weight: bold;
     text-align: center;
-    flex: 1;
-    width: 90%;
+     flex: 1;
+    width: 90%; */
+    color: blue;
+      position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
 }
 
+.ho-txt-cxazul {
+    inset: auto auto 80px 30px;
+}
+
+&:hover .ho-txt-cxazul {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
 
 
 .ho-img-membros {
     flex: 1;
     background-image: url("../../assets/image/pc_home_equipe.webp");
+    position: absolute;
     background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+        /* background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: 60%;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 20px 20px 0px 0px; */
+    
 
 }
+
+ &:hover .ho-img-membros {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
 
 .ho-img-projetos {
     flex: 1;
     background-image: url("../../assets/image/pc_home_projeto.webp");
+     position: absolute;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 100%;
-    height: 60%;
-    border-radius: 20px 20px 0px 0px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
 
 }
+
+&:hover .ho-img-projetos {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
 
 .ho-img-sobre {
     flex: 1;
     background-image: url("../../assets/image/pc_home_sobre.webp");
+     position: absolute;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 100%;
-    height: 60%;
-    border-radius: 20px 20px 0px 0px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
 }
+
+
+&:hover .ho-img-sobre {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
 
 .ho-img-publicacoes {
     flex: 1;
     background-image: url("../../assets/image/pc_home_publicacoes.webp");
+    position: absolute;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 100%;
-    height: 60%;
-    border-radius: 20px 20px 0px 0px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
 
 }
+
+&:hover .ho-img-publicacoes {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
 
 #faixaazul {
     color: var(--color-2);
