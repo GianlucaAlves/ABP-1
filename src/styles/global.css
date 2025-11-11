@@ -337,7 +337,9 @@ footer {
 .dropdown-content a:hover {
   background-color: var(--color-4);
   color: var(--color-3);
+  box-shadow: 0 0 0 0 ;
 }
+
 
 .responsive-menu {
   display: none;
