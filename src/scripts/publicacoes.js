@@ -17,9 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="pub-card">
  
             <img class="pub-cover"
-              src="../src/assets/image/co${pub.id_conteudo}.jpg"
-              onerror="this.onerror=null; this.src='../src/assets/image/co${pub.id_conteudo}.png';"
-              alt="capa"
+              <img src="http://localhost:3000/uploads/${pub.co_imagem}" alt="${pub.co_titulo}">
             >
  
             <h2 class="pub-title">${pub.co_titulo}</h2>

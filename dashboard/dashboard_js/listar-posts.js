@@ -13,7 +13,7 @@ async function loadConteudos(tipo = "") {
     tr.innerHTML = `
       <td>${c.id_conteudo}</td>
       <td>${c.co_titulo}</td>
-      <td>${c.autor_nome || c.co_autor}</td>
+      <td>${c.co_autor}</td>
       <td>${c.co_tipo_conteudo}</td>
       <td>${c.co_data_inicio || ""}</td>
       <td class="actions">
