@@ -34,10 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       //    Usando as colunas do BD: co_titulo, co_atividades, co_status, co_data_inicio
       //    E as classes do projetos.html
       article.innerHTML = `
-        <img 
-          src="../src/assets/image/pr${projeto.id_conteudo}.jpg" 
-          onerror="this.onerror=null; this.src='../src/assets/image/pc_home_carrosel1.webp';" 
-          alt="imagem do projeto ${projeto.co_titulo}" 
+        <img src="http://localhost:3000/uploads/${projeto.co_imagem}" alt="${projeto.co_titulo}"
         />
         <div class="article-text">
           <a href="./projeto-individual.html?id=${projeto.id_conteudo}">

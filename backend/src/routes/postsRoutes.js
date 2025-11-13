@@ -130,53 +130,47 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", getPostById); // Isso vai pegar o /posts/7
 
-// UPDATE
-router.put("/:id", async (req, res) => {
+router.put("/:id", upload.single("imagem"), async (req, res) => {
   try {
     const { id } = req.params;
-
     const fields = [];
     const values = [];
     let index = 1;
 
+    // Se houver nova imagem
+    if (req.file) {
+      fields.push(`co_imagem = $${index}`);
+      values.push(req.file.filename);
+      index++;
+    }
+
+    // Atualiza os outros campos do body
     for (const [key, value] of Object.entries(req.body)) {
-      // Ignorar campos vazios ou nulos (evitar "")
       if (value === "" || value === null || value === undefined) continue;
-
-      // Converter para número quando fizer sentido (evita erro em INT)
-      const parsedValue =
-        !isNaN(value) && value !== "" && value !== null
-          ? Number(value)
-          : value;
-
+      const parsedValue = !isNaN(value) ? Number(value) : value;
       fields.push(`${key} = $${index}`);
       values.push(parsedValue);
       index++;
     }
 
     if (fields.length === 0) {
-      return res.status(400).json({ error: "Nenhum dado válido enviado para atualização" });
+      return res.status(400).json({ error: "Nenhum dado válido enviado" });
     }
 
-    // Adiciona ID ao final
     values.push(Number(id));
-
     const query = `
       UPDATE conteudo
       SET ${fields.join(", ")}
       WHERE id_conteudo = $${index}
       RETURNING *;
     `;
-
     const result = await pool.query(query, values);
-
     if (result.rows.length === 0) {
       return res.status(404).json({ error: "Conteúdo não encontrado" });
     }
-
     res.json(result.rows[0]);
   } catch (err) {
-    console.error("Erro ao atualizar conteúdo:", err.message, err);
+    console.error("Erro ao atualizar conteúdo:", err.message);
     res.status(500).json({ error: "Erro ao atualizar conteúdo" });
   }
 });
