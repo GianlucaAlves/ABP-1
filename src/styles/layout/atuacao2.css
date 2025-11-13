@@ -1,0 +1,112 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 60px 5%;
+  }
+  
+  /* Cada bloco (texto + imagem) */
+  .atu-monitoramento,
+  .atu-desmatamento,
+  .atu-safras,
+  .atu-fenologia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 1200px;
+    gap: 40px;
+  }
+  
+  /* Texto */
+  .atu-monitoramento p,
+  .atu-desmatamento p,
+  .atu-safras p,
+  .atu-fenologia p {
+    width: 60%;
+    text-align: justify;
+    line-height: 1.6;
+  }
+  
+  /* Imagens */
+  .atu-img1,
+  .atu-img2,
+  .atu-img3,
+  .atu-img4 {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    flex-shrink: 0;
+  }
+  
+  /* Alternando lados — escada */
+  .atu-monitoramento,
+  .atu-safras {
+    align-self: flex-end;
+    flex-direction: row-reverse; /* imagem à direita */
+    text-align: right;
+  }
+  
+  .atu-desmatamento,
+  .atu-fenologia {
+    align-self: flex-start;
+    flex-direction: row; /* imagem à esquerda */
+    text-align: left;
+  }
+  
+  /* Títulos */
+  .atu-monitoramento h2,
+  .atu-safras h2 {
+    text-align: right;
+  }
+  
+  .atu-desmatamento h2,
+  .atu-fenologia h2 {
+    text-align: left;
+  }
+  
+
+  
+
+  .atu-img1 {
+    background-image: url(../../assets/image/monit_mapeamento.png);
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  
+  .atu-img2 {
+    background-image: url(../../assets/image/analise_impactos.png);
+    width: 200px;
+    height: 200px;
+    margin-left: 10%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+  }
+  
+  .atu-img3 {
+    background-image: url(../../assets/image/estima_analise.png);
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    margin-left: 5%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .atu-img4 {
+    background-image: url(../../assets/image/feno.png);
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+  }
