@@ -1,190 +1,231 @@
-.selected-box:hover .dropdown-content {
-  margin-top: -22px;
+.atu-boxinfo {
+    background-color: #007c5a;
+    padding: 15px 15px;
+    border-radius: 15px;
+    color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    
 }
 
-hr {
-  width: 70%;
-  height: 0%;
-  margin: 10px auto;
+.atu-monitoramento, .atu-desmatamento, .atu-safras, .atu-fenologia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 1200px;
+    gap: 50px 50px;
+    padding-bottom: 10px;
 }
 
-.atu-title {
-  padding-top: 20px;
+.atu-content {
+    width: 40%; 
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    font-size: 0.9rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-bottom: 15px;
 }
 
-#atu-text {
-  color: #2F4F4F;
-  width: 60%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 0%
+.atu-content h2 {
+    text-align: left;
+}
+.atu-content p{
+    padding-top: 10px;
 }
 
-.atu-images {
-  display: flex;
-  justify-content: space-evenly;
-  /* centraliza horizontalmente */
-  gap: 30px;
-  text-align: center;
-  width: 50%;
+.accordion {
+    width: 100%; 
+    overflow: hidden;
 }
 
-.atu-images div {
-  display: flex;
-  flex-direction: column;
-  /* empilha a imagem, título e checkbox */
-  align-items: center;
-  /* centraliza horizontalmente */
-  width: 220px;
+.accordion-header {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    background-color: transparent; 
+    cursor: pointer;
+    font-weight: 600;
+    color: #245C4D;
+    transition: color 0.1s;
+    
+}
+
+.accordion-header:hover {
+    color: #007c5a;
+    background-color: transparent;
+}
+
+.accordion-header .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-right: 10px; 
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background-color: #007c5a; 
+    transition: background-color 0.3s, transform 0.3s;
+    content: '+'; 
+    visibility: visible;
+    border-radius: 15px;
+}
+
+.accordion-body {
+    max-height: 0; 
+    padding: 0 0 0 30px; 
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.accordion-body p {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.accordion-body ul {
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+
+
+.accordion-checkbox:checked + .accordion-header .icon {
+    background-color: #2F4F4F; 
+    
+}
+
+.accordion-checkbox:checked + .accordion-header {
+    color: #2F4F4F;
+}
+
+.accordion-checkbox:checked ~ .accordion-body {
+    max-height: 100px; 
+    padding: 10px 0 15px 30px; 
+}
+
+
+
+.atu-monitoramento,
+.atu-safras {
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.atu-desmatamento,
+.atu-fenologia {
+    flex-direction: row-reverse; 
+    align-self: flex-end;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 
 .atu-img1 {
-  background-image: url(../../assets/image/monit_mapeamento.png);
-  width: 200px;
-  height: 200px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: url(../../assets/image/monitoramento-sf.png);
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
-
 .atu-img2 {
-  background-image: url(../../assets/image/analise_impactos.png);
-  width: 200px;
-  height: 200px;
-  margin-left: 10%;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
+    background-image: url(../../assets/image/analise-sf.png);
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .atu-img3 {
-  background-image: url(../../assets/image/estima_analise.png);
-  width: 200px;
-  height: 200px;
-  background-size: contain;
-  margin-left: 5%;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: url(../../assets/image/produtividade-sf.png);
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .atu-img4 {
-  background-image: url(../../assets/image/feno.png);
-  width: 200px;
-  height: 200px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 5%;
-}
-
-div #fenologia {
-  margin-top: 5%;
-}
-
-div #estimativas {
-  margin-left: 20px;
-}
-
-.btn-name {
-  text-decoration: none;
-  margin: 25%;
-  font-size: 20px;
-  color: var(--color-2);
+    background-image: url(../../assets/image/fenologia-sf.png);
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 
-.hidden {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  width: 100%;
-  text-align: left;
+@media (max-width: 900px) {
+    .atu-monitoramento, 
+    .atu-desmatamento,
+    .atu-safras,
+    .atu-fenologia {
+        flex-direction: column; 
+        align-self: center; 
+        width: 95%;
+        gap: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .atu-content {
+        width: 100%; 
+        order: 2; 
+        margin-top: 10px;
+    }
+
+    .atu-img1,
+    .atu-img2,
+    .atu-img3,
+    .atu-img4 {
+        width: 90%; 
+        height: 250px;
+        order: 1; 
+        margin: 0;
+    }
 }
 
-.box-content:checked~.hidden {
-  opacity: 1;
-  max-height: 500px;
-  padding: 10px;
-  background-color: #007bff;
-  color: var(--color-4);
-  border-radius: 12px;
-  padding: 12px;
-  opacity: 1;
-  margin-top: 10px;
-  text-align: start;
 
-}
-
-
-.box-content {
-  appearance: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #007bff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  /* permite usar ::before */
-  margin-bottom: 10px;
-
-}
-
-/* Adiciona o "+" */
-.box-content::before {
-  content: "+";
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.box-content:checked::before {
-  content: "-";
+.accordion-body li::marker {
+    color:#2F4F4F; 
 }
 
 .btn-projeto {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 45%;
+  margin: 20px auto; 
   border: none;
   background-color: #007bff;
-  margin: 20px auto;
-  padding: 12px 30px;
+  padding: 12px 30px; 
+  height: 40px; 
   border-radius: 50px;
-  width: 100px;
-  height: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
-.atu-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+.btn-projeto a.btn-name {
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 1em; 
+    white-space: nowrap; 
+    text-align: center; 
 }
 
-@media (max-width: 1300px) {
-  .atu-container {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .atu-images {
-    width: 100%;
-  }
-}
-
-@media (max-width: 900px) {
-  .atu-images {
-    display: grid;
-  }
-
-}
