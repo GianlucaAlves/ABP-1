@@ -25,8 +25,14 @@
                 <label for="editData">Data</label>
                 <input id="editData" type="date">
 
-                <button onclick="saveEdit()">Salvar</button>
+
+                <label for="editImagem">Imagem de capa:</label>
+                <input type="file" id="editImagem" accept="image/*">
+
+                <button type="button" onclick="saveEdit()">Salvar</button>
                 <button onclick="closeModal()">Cancelar</button>
+
+                
                 
             </div>
         </div>
@@ -121,7 +127,7 @@
                 <li class="dropdown">
                     <input type="checkbox" id="AgriRSLab-menu" class="dropdown-toggle">
                     <label for="AgriRSLab-menu" class="menu-AgriRSLab">AgriRSLab <div class="icon-arrow"><img
-                                src="../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
+                                src="../../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
 
                     <div class="mbl-dropdown-content">
                         <a href="./posts.html">Criar conteudos</a>
@@ -146,8 +152,8 @@
             <label for="filterTipo">Filtrar por tipo:</label>
             <select id="filterTipo">
                 <option value="">Todos</option>
-                <option value="1">Notícias</option>
-                <option value="2">Publicações</option>
+                <option value="1">Publicações</option>
+                <option value="2">Notícias</option>
                 <option value="3">Projetos</option>
                 <option value="4">Vagas de Estágio</option>
             </select>

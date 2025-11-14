@@ -1,39 +1,115 @@
-* {
-    margin: 0;
+/* --- Container Principal (agora é um Grid) --- */
+#so {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Cria 2 colunas de tamanho igual */
+    gap: 25px; /* Espaçamento entre os cards */
+    
+    margin-bottom: 50px; /* Mantém sua margem original */
+
+    /* Removemos os estilos antigos (sombra, borda) do container */
+    border-radius: 0;
+    box-shadow: none;
     padding: 0;
-    box-sizing: border-box
 }
 
-section {
-    margin-bottom: 2rem;
+/* --- Estilo Base do Card (aplicado a todas as seções) --- */
+main section {
+    background-color: var(--color-2); /* Cor Branca (do global.css) */
+    border-radius: 12px;       /* Bordas arredondadas (da referência) */
+    padding: 25px 30px;
+    /* Sombra suave (da referência, mas adaptada p/ tema claro) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    margin-bottom: 0; /* O 'gap' do grid agora controla o espaçamento */
 }
 
-#title-so {
-    color: #2f4f4f;
+/* --- Títulos --- */
+
+/* O Título H1 e a linha devem ocupar a largura total do grid */
+#title, 
+.title-line {
+    grid-column: 1 / -1; /* Faz o item ocupar as 2 colunas */
+}
+
+/* O card "Sobre" (o primeiro) também deve ocupar a largura total */
+.sobre {
+    grid-column: 1 / -1;
+    
+}
+.so-img{
+
+
+
+
+}
+
+
+
+/* Estilo do Título da Página (H1) */
+#title {
+    color: var(--color-1); /* Cor primária (do global.css) */
     font-size: 2.5rem;
     font-weight: 800;
+    text-align: left; /* Alinha à esquerda em vez de justificar */
+    margin-bottom: 0; /* Remove margem para a linha ficar próxima */
 }
 
+/* Estilo da linha (se você ainda a usa) */
+.title-line {
+     width: 100%;
+     height: 1px;
+     background-color: #ddd; /* Uma linha cinza clara */
+     margin-bottom: 1rem;
+}
+
+/* Títulos dos Cards (H2) */
 h2 {
     font-size: 1.8rem;
     font-weight: 900;
+    color: var(--color-1); /* Cor primária (do global.css) */
+    margin-bottom: 15px;
+    text-align: left; /* Alinha à esquerda */
 }
 
+/* --- Listas (Valores e Metodologia) --- */
 ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-main li::before {
-    content: "-";
-    color: black;
+main li {
+    position: relative;
+    padding-left: 25px; /* Espaço para o marcador */
+    margin-bottom: 8px;
 }
 
-.so-line {
-    width: 800px;
-    height: 1px;
-    background-color: #333;
-    margin: 10px auto 0;
-    border-radius: 2px;
-    margin-bottom: 1rem;
+/* Marcador personalizado: Usando sua cor de destaque! */
+main li::before {
+    content: "✓"; /* Marcador de "check" */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--color-5); /* Cor Verde (do global.css) */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- Responsividade --- */
+/* Usa o mesmo breakpoint do seu global.css */
+@media (max-width: 900px) {
+    #so {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+        gap: 20px;
+    }
+
+    .sobre-content-with-icon {
+    flex-direction: column; /* Empilha o ícone e o texto */
+    align-items: center; /* Centraliza */
+    gap: 15px;
+    }
+
+    .sobre-content-with-icon::before {
+    width: 50px;
+    height: 50px;
+}
+
 }

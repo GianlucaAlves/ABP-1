@@ -11,16 +11,32 @@
 <a href ="#burndown"> Burndown</a>
 </p>
 
-> Status da Sprint: Em andamento ⏳
+> Status da Sprint: Em andamento ✅
 >
 > [Sprint 2 no YouTube] 📽️
 
 
 ##  Desafio <a id="desafio"></a>
 
-Desenvolver banco de dados iniciando através da 'entidade-relação' e dar início à programação do banco de dados. Realização do CRUD de páginas necessárias; script de funcionalidades de seus botões.
+Desenvolver banco de dados iniciando através da 'entidade-relação' e dar início à programação do banco de dados. Realização do CRUD de páginas necessárias; script de funcionalidades dos botões.
 
 ##  Backlog e progresso <a id="us"></a>
+| Backlog ID | Task                  | Tipo do item   | Descrição                                    | Prioridade | Especifidades                                                                                                                         | Pontuação | Status    | Tecnologias utilizadas      | Prazo    |
+|------------|-----------------------|----------------|----------------------------------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------|-----------|-----------|-----------------------------|----------|
+|            | BD-001,BD-002         | BANCO DE DADOS | CRIAÇÃO DE UM ESQUEMA DE ENTIDADE RELACIONAL | Alta       | Criar um esquema de entidade relacional do banco de dados que será utilizado                                                          | 5         | ✅ | DBDesigner, PostgreSQL      | 21/10/25 |
+|            | BD-001,BD-002         | BANCO DE DADOS | CRIAÇÃO DO BANCO DE DADOS                    | Muito alta | Criar um banco de dados com todas as tabelas necessárias para o funcionamento do site, seguindo o esquema entidade relacional         | 8         | ✅ | DBDesigner, PostgreSQL      | 21/10/25 |
+| RNF-02     | AL-001, AL-006        | SCRIPT         | CRIAÇÃO DE SCRIPT - CONTATO                  | Alta       | Criar um script referênte a pagina contato para o envio de mensagens de contato direto com o laboratório                              | 5         | ✅ | JavaScript, VSCode, Node.js | 31/10/25 |
+| RNF-02     | AL-001, AL-006        | SCRIPT         | CRIAÇÃO DO SCRIPT - PASSAR PÁGINA            | Media      | Criar um script que passe páginas com muito conteúdo, como a de projetos. O objetivo é deixar a página mais suave de ser visualizada. | 3         | ✅ | JavaScript, VSCode, Node.js | 31/10/25 |
+| RNF-02     | AL-001, AL-006        | SCRIPT         | CRIAÇÃO DE SCRIPT - FILTRO                   | Alta       | Criar um script de filtro para as páginas que necessitam de pesquisa                                                                  | 5         | ✅ | JavaScript, VSCode, Node.js | 31/10/25 |
+| RNF-02     | DD-015                | DESIGN         | CRIAÇÃO DE UM MENU - ADMINISTRADOR           | Media      | Criar um design de um menu para o administrador do sistema                                                                            | 3         | ✅ | FIGMA                       | 13/10/25 |
+| RNF-02     | DD-016                | DESIGN         | CRIAÇÃO DE UM MENU - MEMBRO                  | Media      | Criar um design de um menu para os membros do sistema                                                                                 | 3         | ✅ | FIGMA                       | 13/10/25 |
+| RNF-02     | DD-017                | DESIGN         | CRIAÇÃO DE UMA PÁGINA DE ENVIO DE CONTEUDO   | Alta       | Criar um design para uma pagina de envio de conteudos que alimentarao o site                                                          | 5         | ✅ | FIGMA                       | 13/10/25 |
+| RNF-02     | DD-018                | DESIGN         | CRIAÇÃO DE UM PÁGINA DE LISTA DE CONTEÚDO    | Media      | Criar um design de uma página que lista todos os conteudos do site                                                                    | 3         | ✅ | FIGMA                       | 13/10/25 |
+| RNF-02     | DD-016                | DESIGN         | CRIAÇÃO DE UMA PÁGINA DE CADASTRO DE MEMBRO  | Alta       | Criar um design para uma página que permita cadastrar membros                                                                         | 5         | ✅ | FIGMA                       | 13/10/25 |
+| RNF-02     | DD-016                | DESIGN         | CRIAÇÃO DE UM PÁGINA DE LISTA DE MEMBROS     | Media      | Criar um design de uma página que liste todos os membros cadastrados                                                                  | 3         | ✅ | FIGMA                       | 13/10/25 |
+| RNF-02     | DD-015                | DESIGN         | CRIAÇÃO DE UMA PÁGINA DE LOGIN               | Media      | Criar um design para uma página de login                                                                                              | 3         | ✅ | FIGMA                       | 13/10/25 |
+| RNF-02     | AL-003,AL-004, AL-005 | BACKEND        | CRIAÇÃO DE UM CRUD DE MEMBROS                | Muito alta | Criar as funções primárias de um um sistema para membros                                                                              | 8         | ✅ | JavaScript, VSCode, Node.js | 31/10/25 |
+| RNF-02     | AL-003,AL-004, AL-005 | BACKEND        | CRIAÇÃO DE UM CRUD DE CONTEÚDO               | Muito alta | Criar as funções primárias de um sistema para conteúdo                                                                                | 8         | ✅ | JavaScript, VSCode, Node.js | 31/10/25 |
 
 
 
@@ -45,7 +61,7 @@ Desenvolver banco de dados iniciando através da 'entidade-relação' e dar iní
 ##  Burndown Chart 📉🔥 <a id="burndown"></a>
 
 <p align="center">
-  <img src="#" alt="BurnDown Sprint 2" width="400px" />
+  <img src="Burndown_spr2.png" alt="BurnDown Sprint 2" width="400px" />
 </p>
 
 

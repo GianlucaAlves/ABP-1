@@ -1,0 +1,136 @@
+
+#title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.title-line {
+  width: 100px;
+  height: 3px;
+  background-color: #0073e6;
+  margin: 0 auto 50px;
+  border-radius: 2px;
+}
+
+.par-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px 5px;
+  justify-items: center;
+  align-items: stretch;
+  max-width: 650px;
+  margin: 0 auto; 
+  margin-bottom: 10%;
+}
+
+
+.par-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 15px 15px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+
+.par-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  background-color: #fff;
+}
+
+.par-img {
+  margin-bottom: 15px;
+  margin-top: -50px;
+}
+
+
+.par-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: -35px;
+  flex-grow: 1;
+}
+
+.saiba-mais {
+  font-size: 0.9rem;
+  font-weight: 500;
+  align-self: flex-start;
+  transition: color 0.3s ease;
+  margin-top: 20px;
+  text-decoration: none; 
+  color: #333;
+}
+
+
+
+
+
+.par-img1INPE { 
+    background-image: url(../../assets/image/pc_home_INPE-sf.png); 
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;}
+.par-img2BRAZILDATACUBE { background-image: url(../../assets/image/pc_home_BRAZILDATACUBE-sf.png);
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.par-img3CONAB { background-image: url(../../assets/image/pc_home_CONAB-sf.png);
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.par-img4CNPQ { background-image: url(../../assets/image/pc_home_CNPQ-sf.png);
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.par-img5FAPESP { background-image: url(../../assets/image/pc_home_FAFESP-sf.png);
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.par-img6CAPES { background-image: url(../../assets/image/pc_home_CAPES-sf.png);
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .par-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  .par-grid {
+    grid-template-columns: 1fr;
+    width: 95%;
+  }
+  .par-card {
+    padding: 24px;
+  }
+}
