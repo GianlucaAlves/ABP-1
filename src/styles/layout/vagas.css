@@ -58,6 +58,12 @@ hr {
 
     
 }
+.va-content__block:hover{
+    transform: translateY(-5px);
+  box-shadow: 2px 2px 5px gray;
+  background-color: whitesmoke;
+}
+
 
 .va-content__block>p {
     margin: 0;

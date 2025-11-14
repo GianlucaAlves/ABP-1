@@ -1,15 +1,30 @@
 .vai-content-block {
     margin-bottom: 3%;
+  
+    ;
 }
 
 .vai-content-title {
     font-weight: 600;
+    color: #2F4F4F
+}
+
+#va{
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px gray;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;    /* Dá um espaço no topo */
+    padding-bottom: 20px; /* Dá um espaço embaixo para o botão "Voltar" */
+    margin-bottom: 50px;
+    
+    
 }
 
 #vai-content-btn {
     text-decoration: none;
     color: #fff;
-    background-color: #0574BB;
+    background-color: #2F4F4F;
     border-radius: 20px;
     border-style: none;
     padding: 7px;
