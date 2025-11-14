@@ -440,10 +440,12 @@ h4 {
 }
 
 .ho-cxnoticia {
-    background-color: #efecec;
+    background-color: white;
     margin: 50px auto; /* Centraliza e adiciona margem acima/abaixo */
-    padding: 20px;
+    padding: 60px;
     width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
     
 }
 
@@ -469,6 +471,14 @@ h4 {
     background-image: url("../../assets/image/ho-home-noticias.jpg"); /* <--- Imagem Principal */
     background-size: cover;
     background-position: center;
+}
+
+
+#ho-titulo-cards{
+font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    font-size: 50px;
+
 }
 
 /* COLUNA DE LISTA (DIREITA) */
@@ -568,10 +578,11 @@ h4 {
 
 .ho-faixaazul {
     background-color: var(--color-6);
-    display: flex;
     justify-content: space-evenly;
     padding-top: 40px;
     padding-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 
