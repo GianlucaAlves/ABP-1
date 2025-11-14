@@ -13,6 +13,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 app.get("/", (req, res) => {
   res.json({ status: "backend ok" });
 });
@@ -22,6 +23,7 @@ app.use("/dashboard", dashboardRoutes);
 app.use("/posts",  postsRoutes);
 app.use("/membros", membrosRoutes);
 
+app.use("/uploads", express.static("src/uploads"));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

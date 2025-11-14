@@ -1,5 +1,17 @@
 const apiUrl = "http://localhost:3000/posts";
 
+
+
+let currentFilter = ""; // variável global
+
+document.getElementById("filterTipo").addEventListener("change", e => {
+  currentFilter = e.target.value;
+  loadConteudos(currentFilter);
+});
+
+
+
+
 async function loadConteudos(tipo = "") {
   const url = tipo ? `${apiUrl}?tipo=${tipo}` : apiUrl;
   const res = await fetch(url);
@@ -13,11 +25,11 @@ async function loadConteudos(tipo = "") {
     tr.innerHTML = `
       <td>${c.id_conteudo}</td>
       <td>${c.co_titulo}</td>
-      <td>${c.autor_nome || c.co_autor}</td>
+      <td>${c.co_autor}</td>
       <td>${c.co_tipo_conteudo}</td>
       <td>${c.co_data_inicio || ""}</td>
       <td class="actions">
-        <button class="edit" onclick="editConteudo(${c.id_conteudo})">Editar</button>
+        <button type="button" class="edit" onclick="editConteudo(${c.id_conteudo})">Editar</button>
         <button class="delete" onclick="deleteConteudo(${c.id_conteudo})">Excluir</button>
       </td>
     `;
@@ -32,6 +44,9 @@ async function editConteudo(id){
 
   editingId = id;
 
+  currentFilter = document.getElementById("filterTipo").value; // salva filtro atual
+  console.log("Filtro salvo:", currentFilter);
+
   const res = await fetch(`${apiUrl}/${id}`);
   const data = await res.json();
 
@@ -44,26 +59,34 @@ async function editConteudo(id){
 }
 
 async function saveEdit() {
-  const body = {
-    co_titulo: document.getElementById("editTitulo").value,
-    co_autor: document.getElementById("editAutor").value,
-    co_tipo_conteudo: document.getElementById("editTipo").value,
-    co_data_inicio: document.getElementById("editData").value
-  };
+  const formData = new FormData();
+  formData.append("co_titulo", document.getElementById("editTitulo").value);
+  formData.append("co_autor", document.getElementById("editAutor").value);
+  formData.append("co_tipo_conteudo", document.getElementById("editTipo").value);
+  formData.append("co_data_inicio", document.getElementById("editData").value);
+
+  const fileInput = document.getElementById("editImagem");
+  if (fileInput.files.length > 0) {
+    formData.append("imagem", fileInput.files[0]);
+  }
 
   const res = await fetch(`${apiUrl}/${editingId}`, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body)
+    body: formData
   });
 
-   if (res.ok) {
+  if (res.ok) {
     closeModal();
-    loadConteudos();
+    console.log("Antes do reload, filtro:", document.getElementById("filterTipo").value);
+    loadConteudos(currentFilter);
+
   } else {
     alert("Erro ao salvar");
   }
+
+  console.log("Filtro atual:", currentFilter);
 }
+
 
 function closeModal() {
   document.getElementById("editModal").style.display = "none";

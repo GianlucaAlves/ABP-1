@@ -1,92 +1,65 @@
-/*
-  Função MESTRE para checar imagens.
-  Ela é async e retorna a URL que funcionar, ou null.
-*/
 async function findImage(base) {
-  const exts = ["webp", "jpg", "png"]; // Ordem de prioridade
-
-  // Função helper que usa Promise
-  const check = (url) =>
+  const exts = ["webp", "jpg", "png"];
+  const check = url =>
     new Promise((resolve, reject) => {
       const img = new Image();
       img.onload = () => resolve(url);
       img.onerror = () => reject();
       img.src = url;
     });
-
   for (const ext of exts) {
     const path = `${base}.${ext}`;
     try {
-      await check(path); // Tenta carregar
-      return path; // Sucesso! Retorna o caminho
-    } catch (e) {
-      // Falhou, tenta o próximo
-    }
+      await check(path);
+      return path;
+    } catch (e) {}
   }
-
-  return null; // Nenhuma funcionou
+  return null;
 }
 
-/*
-  Nosso script principal
-*/
 document.addEventListener("DOMContentLoaded", async () => {
+  const grid = document.querySelector(".noticias-grid"); // container no HTML
   try {
     const res = await fetch("http://localhost:3000/posts?tipo=2"); // notícias
     const noticias = await res.json();
 
-    const cards = document.querySelectorAll(".no-content");
+    grid.innerHTML = ""; // limpa os cards estáticos
 
-    // O forEach precisa ser async pra gente poder usar await dentro dele
-    cards.forEach(async (card, i) => {
-      const pub = noticias[i];
+    for (const pub of noticias) {
+      const div = document.createElement("div");
+      div.classList.add("no-content");
 
-      if (!pub) {
-        card.style.display = "none";
-        return;
-      }
+      // Imagem
+      const imgDiv = document.createElement("div");
+      imgDiv.classList.add("no-img");
+      imgDiv.innerHTML = `<img src="http://localhost:3000/uploads/${pub.co_imagem}" alt="${pub.co_titulo}"
+        />`
 
-      // ===============================
-      //   IMAGEM (O Jeito Certo)
-      // ===============================
-      const imgDiv = card.querySelector("[class^='no-img']");
-      if (imgDiv) {
-        // CORREÇÃO DO ERRO DE DIGITAÇÃO AQUI:
-        const base = `../src/assets/image/co${pub.id_conteudo}`;
+     const div2 = document.createElement("div");
+     div2.classList.add("no-text");
+        // Título
+      const h3 = document.createElement("h3");
+      h3.classList.add("no-sub");
+      h3.textContent = pub.co_titulo;
 
-        const imageUrl = await findImage(base); // Usa a função mestre
+      // Resumo
+      const p = document.createElement("p");
+      p.textContent = pub.co_lide ?? "Sem resumo disponível.";
 
-        if (imageUrl) {
-          imgDiv.style.backgroundImage = `url('${imageUrl}')`;
-        } else {
-          // Usa a imagem padrão se não achar NENHUMA
-          imgDiv.style.backgroundImage = `url('../src/assets/image/default.png')`;
-        }
-      }
-
-      // ===============================
-      //   TÍTULO + RESUMO (LIDE)
-      // ===============================
-      const h3 = card.querySelector("h3");
-      if (h3) h3.textContent = pub.co_titulo;
-
-      const p = card.querySelector("p");
-      if (p) p.textContent = pub.co_lide ?? "Sem resumo disponível.";
-
-      // ===============================
-      //   CLIQUE NA DIV → NOTÍCIA INDIVIDUAL
-      // ===============================
-      card.style.cursor = "pointer";
-      card.addEventListener("click", () => {
+      // Monta card
+      div.appendChild(imgDiv);
+      div.appendChild(div2);
+      div2.appendChild(h3);
+      div2.appendChild(p);
+      
+      // Clique para abrir notícia individual
+      div.style.cursor = "pointer";
+      div.addEventListener("click", () => {
         window.location.href = `notindividual.html?id=${pub.id_conteudo}`;
       });
 
-      // ===============================
-      //   REMOVER LINKS INTERFERENTES
-      // ===============================
-      const a = card.querySelector("a");
-      if (a) a.removeAttribute("href");
-    });
+      grid.appendChild(div);
+    }
   } catch (err) {
     console.error("Erro ao carregar notícias:", err);
   }
