@@ -205,10 +205,17 @@
     background-color: black;
 }
 
+
+/*  estilo do Bemvindo  */
 h1 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 
+}
+
+.ho-title{
+    margin: 20px;
+   
 }
 
 h4 {
@@ -216,130 +223,350 @@ h4 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.ho-materia {
+.ho-materia-topicos {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px; /* Espaço entre os cartões */
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-.ho-txtomateria {
-    width: 40%;
-    font-size: 20px;
+.ho-topico-item {
+    flex: 1; /* Distribui o espaço igualmente entre os 3 */
+    text-align: center;
+    padding: 20px;
+}
+
+.ho-topico-icone {
+    /* Contêiner para o ícone */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 60px; /* Para garantir alinhamento */
+}
+
+/* Estilo para os ícones (se você usar DIVs como placeholder) */
+.ho-topico-icone > div {
+    /* Exemplo: Quadrado verde que representa o ícone */
+    width: 40px;
+    height: 40px;
+   background-color: var(--color-5); 
+    border-radius: 5px;
+ 
+}
+
+
+
+/* icones*/
+
+.icone-ciencia { 
+    mask: url("../../assets/image/ho-home-icone-ciencia.png") no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url("../../assets/image/ho-home-icone-ciencia.png") no-repeat center;
+    -webkit-mask-size: contain;
+    background-color: var(--color-5); /* Cor do seu ícone */
+}
+
+.icone-metodologia { 
+    mask: url("../../assets/image/ho-home-icone-sustentavel.png") no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url("../../assets/image/ho-home-icone-sustentavel.png") no-repeat center;
+    -webkit-mask-size: contain;
+    background-color: var(--color-5); /* Cor do seu ícone */
+}
+
+
+.icone-formacao { 
+    mask: url("../../assets/image/ho-home-icone-formacao.png") no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url("../../assets/image/ho-home-icone-formacao.png") no-repeat center;
+    -webkit-mask-size: contain;
+    background-color: var(--color-5); /* Cor do seu ícone */
+}
+
+.ho-topico-titulo {
+    font-size: 1.1rem;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0px 20px 20px 0px;
+    color: var(--color-5); /* Títulos em verde (como no seu exemplo) */
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ho-topico-texto {
+    font-size: 0.95rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-3);
+    line-height: 1.6;
     text-align: justify;
 }
 
-.ho-imgmateria {
-    width: 60%;
-    background-image: url("../../assets/image/pc_home_gado.webp");
-    background-size: cover;
-    height: 400px;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-}
 
+
+
+/* fim do estilo do Bemvindo */
+
+
+
+/* Caixa principal */
 .ho-caixaazul {
     display: flex;
     justify-content: space-around;
-    /* ou space-between, ajuste como preferir */
     flex-wrap: wrap;
-    /* Permite que os cards quebrem para a linha de baixo em telas menores */
     margin-bottom: 20px;
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Cada card */
 .ho-card {
+    position: relative;
     width: 22%;
-    /* Um pouco mais de espaço entre eles */
     min-width: 250px;
-    /* Largura mínima para evitar que fiquem muito espremidos */
-    margin: 10px;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
     text-decoration: none;
-    /* Remove o sublinhado do link */
+    color: rgb(240, 240, 240);
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-.ho-titulo-cards {
-    /* MUDOU DE # PARA . */
-    font-family: Arial, Helvetica, sans-serif;
-    color: #0574BB;
-    text-align: center;
-    width: 100%;
+/* Efeito de leve aumento no hover */
+.ho-card:hover {
+    transform: translateY(-5px);
 }
 
+/* Camada de imagem */
 .ho-cxazul {
+    position: absolute;
     width: 100%;
-    height: 300px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: var(--color-6);
-    border-radius: 20px;
+    height: 100%;
+    inset: 0;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
+/* Imagem de fundo */
+.ho-cxazul > div[class^="ho-img-"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Overlay com degradê preto translúcido */
+.ho-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: brightness(0.8);
+    mask-image: linear-gradient(to top, black 70%, transparent 100%);
+    transition: transform 0.6s ease, opacity 0.4s ease;
+    transform: translateY(0);
+    z-index: 1;
+}
+
+/* Hover: escurece mais o fundo e aumenta o contraste do degradê */
+.ho-card:hover::before {
+    transform: translateY(-15px);
+    opacity: 0.8;
+    
+   
+}
+
+
+/* Título */
+.ho-titulo-cards {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    transition: inset 0.3s 0.5s ease-out;
+    z-index: 2;
+}
+
+/* Título sobe quando hover */
+.ho-card:hover .ho-titulo-cards {
+    inset: auto auto 220px 30px;
+    transition: inset 0.3s ease-out;
+}
+
+/* Texto da descrição */
 .ho-txt-cxazul {
-    color: var(--color-2);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    text-align: center;
-    flex: 1;
-    width: 90%;
+    position: absolute;
+    inset: auto auto 80px 30px;
+    opacity: 0;
+    max-width: 80%;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(240, 240, 240);
+    transition: opacity 0.3s 0.1s ease-in;
+    text-align: left;
+    z-index: 2;
 }
 
+/* Mostra texto ao passar o mouse */
+.ho-card:hover .ho-txt-cxazul {
+    opacity: 1;
+}
 
-
+/* Imagens individuais */
 .ho-img-membros {
-    flex: 1;
     background-image: url("../../assets/image/pc_home_equipe.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 60%;
-    border-radius: 20px 20px 0px 0px;
-
 }
-
 .ho-img-projetos {
-    flex: 1;
     background-image: url("../../assets/image/pc_home_projeto.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 60%;
-    border-radius: 20px 20px 0px 0px;
-
 }
-
 .ho-img-sobre {
-    flex: 1;
     background-image: url("../../assets/image/pc_home_sobre.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 60%;
-    border-radius: 20px 20px 0px 0px;
 }
-
 .ho-img-publicacoes {
-    flex: 1;
     background-image: url("../../assets/image/pc_home_publicacoes.webp");
+}
+
+.ho-cxnoticia {
+    background-color: white;
+    margin: 50px auto; /* Centraliza e adiciona margem acima/abaixo */
+    padding: 60px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    
+}
+
+/* Container principal com duas colunas */
+.ho-noticias-container {
+    display: flex;
+    gap: 40px; /* Espaço entre as duas colunas */
+    align-items: flex-start;
+    max-width: 1200px;
+}
+
+/* COLUNA PRINCIPAL (ESQUERDA) */
+.ho-noticias-principal {
+    flex: 0 0 40%; /* Largura fixa para a coluna principal (40%) */
+    background-color: var(--color-4); /* Cor de fundo para garantir espaço */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ho-img-principal {
+    width: 100%;
+    /* Ajuste a altura para o visual vertical grande */
+    height: 700px; 
+    background-image: url("../../assets/image/ho-home-noticias.jpg"); /* <--- Imagem Principal */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 60%;
-    border-radius: 20px 20px 0px 0px;
+}
+
+
+#ho-titulo-cards{
+font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    font-size: 50px;
 
 }
+
+/* COLUNA DE LISTA (DIREITA) */
+.ho-noticias-lista {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+}
+
+.ho-noticias-lista h2 {
+    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-3);
+    margin-bottom: 40px;
+    line-height: 1.1;
+}
+
+/* Item individual de notícia */
+.ho-noticia-item {
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    color: var(--color-3);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--color-4); /* Linha divisória */
+    transition: background-color 0.3s;
+}
+
+.ho-noticia-item:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.ho-noticia-item:hover {
+    color: var(--color-5);
+}
+
+/* Imagem da notícia na lista */
+.ho-noticia-thumb {
+    flex: 0 0 150px; /* Tamanho fixo para a thumb */
+    height: 100px;
+    margin-right: 20px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteúdo da notícia */
+.ho-noticia-conteudo {
+    flex-grow: 1;
+}
+
+.ho-noticia-titulo {
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.ho-noticia-resumo {
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.ho-noticia-mais {
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: var(--color-6); /* Cor de link mais clara */
+    text-transform: uppercase;
+}
+
+/* PLACEHOLDERS DE IMAGEM (TROQUE PELAS SUAS IMAGENS REAIS!) */
+.ho-thumb-1 {
+    background-image: url("../../assets/image/thumb-agri-1.webp"); 
+}
+.ho-thumb-2 {
+    background-image: url("../../assets/image/thumb-agri-2.webp");
+}
+.ho-thumb-3 {
+    background-image: url("../../assets/image/thumb-agri-3.webp");
+}
+
+
+
 
 #faixaazul {
     color: var(--color-2);
@@ -351,8 +578,11 @@ h4 {
 
 .ho-faixaazul {
     background-color: var(--color-6);
-    display: flex;
     justify-content: space-evenly;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -538,5 +768,58 @@ h4 {
 
     .ho-carrosel:not(.feat) {
         height: 500px;
+    }
+}
+
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE DA NITICIAS*/
+
+@media (max-width: 900px) {
+    /* Em telas menores, as colunas viram linhas */
+    .ho-noticias-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .ho-noticias-principal {
+        flex: auto; /* Ocupa 100% da largura */
+        width: 100%;
+    }
+    
+    .ho-img-principal {
+        height: 400px; /* Reduz a altura da imagem principal no mobile */
+    }
+
+    .ho-noticias-lista h2 {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+    
+    .ho-noticia-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .ho-noticia-thumb {
+        flex: 0 0 120px; /* Reduz o tamanho da thumb */
+        height: 80px;
+    }
+}
+
+
+/* RESPONSIVIDADE PARA TÓPICOS */
+@media (max-width: 900px) {
+    .ho-materia-topicos {
+        flex-direction: column; /* Em telas menores, os tópicos ficam em coluna */
+        gap: 30px;
+        margin: 40px auto;
+    }
+
+    .ho-topico-item {
+        padding: 0 10px;
+    }
+    
+    .ho-topico-texto {
+        text-align: center; /* Centraliza o texto no mobile */
     }
 }
