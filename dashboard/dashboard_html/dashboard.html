@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Agência de Sensoriamento Remoto</title>
+  <link rel="stylesheet" href="../dashboard_css/dashboard.css">
+  <link rel="stylesheet" href="../../src/styles/global.css">
+  <script src="../scripts/dashboard.js"></script>
+</head>
+<body>
+ 
+  <header>
+            <div class="content-header">
+                <div class="logo"></div>
+                <div class="options">
+                    <div class="selected-box">
+                        <a href="./dashboard.html"><b>Dashboard</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="box">
+                        <a href="./posts.html"><b>Criar conteúdo</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <div class="box">
+                        <a href="./listar-posts.html"><b>Listar conteudos</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="box">
+                        <a href="./criar-membros.html"><b>Cadastrar membros</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                        
+                    </div>
+
+                    <hr>
+                    <div class="box">
+                        <a href="./listar-membros.html"><b>Listar membros</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <label class="sw-switch">
+            <input type="checkbox">
+            <div class="sw-slider">
+                <span class="sw-text-left">en-us</span>
+                <span class="sw-text-right">pt-br</span>
+                <div class="sw-circle"></div>
+            </div>
+        </label>
+    </header>
+
+        <div class="responsive-menu">
+            <div class="logo"></div>
+            <div class="space"></div>
+            <!-- Checkbox invisível para controlar o menu -->
+            <input type="checkbox" id="menu-toggle">
+
+            <!-- Ícone hambúrguer -->
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Menu Dropdown -->
+            <nav class="menu">
+                
+                <ul>
+                    <label class="sw-switch">
+                        <input type="checkbox">
+                        <div class="sw-slider">
+                        <span class="sw-text-left">en</span>
+                        <span class="sw-text-right">pt-br</span>
+                        <div class="sw-circle"></div>
+                        </div>
+                    </label>
+                    <li><a href="./dashboard.html">Dashboard</a></li>
+                    <hr>
+
+                    <li class="dropdown">
+                        <input type="checkbox" id="AgriRSLab-menu" class="dropdown-toggle">
+                        <label for="AgriRSLab-menu" class="menu-AgriRSLab">AgriRSLab <div class="icon-arrow"><img src="../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
+
+                        <div class="mbl-dropdown-content">
+                            <a href="./posts.html">Criar conteudos</a>
+                            <a href="./listar-posts.html">Listar conteudos</a>
+                            <a href="./criar-membros.html">Cadastrar membros</a>
+                            <a href="./listar-membros.html">Listar membros</a>
+                        </div>
+                    </li>
+
+                    <hr>
+                    <li><a href="vagas.html">Vagas</a></li>
+                   
+                    
+                </ul>
+            </nav>
+        </div>
+
+  <main>
+
+    <section class="welcome">
+      <img src="../../src/assets/image/mingcute--user-4-line.svg">
+      <h1>Bem vindo!</h1>
+      <p>O que deseja fazer hoje?</p>
+
+    </section>
+   
+    <section class="cards">
+      <div class="full-card">
+      <a href="./posts.html">
+      <h2 class="card-title">Criar conteúdo</h2>
+      <div class="card">
+        
+        <img src="../../src/assets/image/pc_home_publicacoes.webp" alt="criar conteudo">
+        <p>Crie vagas, noticias, projetos ou publicações. Deixe nosso portal repleto de conteúdo!</p>
+      </div>
+      </a>
+      </div>
+      <div class="full-card">
+        <a href="./listar-posts.html">
+      <h2 class="card-title">Listar conteudos</h2>
+    <div class="card">
+        <img src="../../src/assets/image/pc_home_projeto.webp" alt="listar conteudo">
+        <p>Visualize, altere ou exclua todos os conteúdos do nosso portal AgriRSLab por aqui!</p>
+      </div>
+      </a>
+      </div>
+      <div class="full-card">
+         <a href="./criar-membros.html">
+      <h2 class="card-title">Cadastrar membros</h2>
+      <div class="card">
+        <img src="../../src/assets/image/pc_home_sobre.webp" alt="cadastrar membros">
+        <p>Membro novo na nossa equipe? Sem problemas! Cadastre-o por aqui!</p>
+      </div>
+         </a>
+      </div>
+      <div class="full-card">
+         <a href="./listar-membros.html">
+      <h2 class="card-title">Listar membros</h2>
+      <div class="card">
+        <img src="../../src/assets/image/pc_home_equipe.webp" alt="listar membros">
+        <p>Administre cadastros, altere dados e visualize todos os nossos colaboradores.</p>
+      </div>
+      </a>
+      </div>
+    </section>
+  </main>
+
+   <footer>
+            <div class="footer">
+                <div class="footer-title"><a href=""></a><b>AgriRSLab</b></div>
+                <div class="footer-options">
+
+                    <b><a href="dashboard.html">Dashboard</a></b>
+                    <b><a href="posts.html">Criar conteúdo</a></b>
+                    <b><a href="listar-posts.html">Lista de conteúdos</a></b>
+                    <b><a href="criar-membros.html">Cadastrar membros</a></b>
+                    <b><a href="listar-membros.html">Lista de membros</a></b>
+                   
+
+                </div>
+                <hr>
+                <div class="infos">
+                    <div class="dev-team">
+                        <p>©2025 Nighthawks. All rights reserved.</p>
+                    </div>
+                    <div class="social-midia">
+                        <a href=""><img src="../../src/assets/image/linkedin.png" alt=""></a>
+                        <a href=""><img src="../../src/assets/image/instagram.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <div class="responsive-footer">
+        
+            <div class="infos">
+                <div class="footer-title"><a href="#"></a><b>AgriRSLab</b></div>
+                <hr>
+                <div class="footer-bottom">
+                <div class="dev-team">
+                    <p>©2025 Nighthawks. <br> All rights reserved.</p>
+                </div>
+                </div>
+                <div class="responsive-social">
+                <div class="social-midia">
+                    <a href="#" class="linkedin2"><img src="../../src/assets/image/linkedin.png" alt=""></a>
+                    <a href="#" class="instagram2"><img src="../../src/assets/image/instagram.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="responsive-footer">
+
+        <div class="infos">
+            <div class="footer-title"><a href="#"></a><b>AgriRSLab</b></div>
+            <hr>
+            <div class="footer-bottom">
+                <div class="dev-team">
+                    <p>©2025 Nighthawks. <br> All rights reserved.</p>
+                </div>
+            </div>
+            <div class="responsive-social">
+                <div class="social-midia">
+                    <a href="#" class="linkedin2"><img src="../../src/assets/image/linkedin.png" alt=""></a>
+                    <a href="#" class="instagram2"><img src="../../src/assets/image/instagram.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+            </label>
+        </div>
+  
+</body>
+</html>

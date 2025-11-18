@@ -10,24 +10,19 @@ function enviarFormulario(event) {
   let valorKeyWord = document
     .getElementById("palavra-chave")
     .value.toLowerCase();
-  let valorData = document.getElementById("pr-date").value; // Pega o ANO (ex: "2007")
-  let valorNome = document.getElementById("pr-nome").value.toLowerCase(); // Pega o AUTOR
+  let valorData = document.getElementById("pr-date").value;
+  let valorNome = document.getElementById("pr-nome").value.toLowerCase();
 
   for (let i = 0; i < post.length; i++) {
     let textPostCompleto = post[i].textContent.toLowerCase();
-
-    // MUDANÇA 1: Precisamos buscar o texto dos autores
-    let autoresPost = post[i]
-      .querySelector(".pub-authors")
-      .textContent.toLowerCase();
+    let tituloPost = post[i].querySelector("h2").textContent.toLowerCase();
 
     let elementoData = post[i].querySelector("[data-date]");
 
     // trava de seguranca
     let dataPost = "";
     if (elementoData) {
-      // MUDANÇA 2: Usamos .substring(0, 4) para pegar SÓ o ano
-      dataPost = elementoData.dataset.date.substring(0, 4); // Pega "2007" de "2007-10-31"
+      dataPost = elementoData.dataset.date; 
     }
 
     let mostrarEstePost = true;
@@ -39,12 +34,11 @@ function enviarFormulario(event) {
     if (
       mostrarEstePost &&
       valorNome !== "" &&
-      !autoresPost.includes(valorNome) // MUDANÇA 3: Comparamos com 'autoresPost'
+      !tituloPost.includes(valorNome)
     ) {
       mostrarEstePost = false;
     }
 
-    // Esta comparação agora funciona (ex: "2007" === "2007")
     if (mostrarEstePost && valorData !== "" && dataPost !== valorData) {
       mostrarEstePost = false;
     }

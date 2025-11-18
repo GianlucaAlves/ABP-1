@@ -1,27 +1,5 @@
 import express from "express";
 import pool from "../db.js";
-import multer from "multer";
-import path from "path";
-import fs from "fs";
-
-// Diretório onde as imagens serão salvas
-const uploadDir = path.resolve("src/uploads");
-
-// Garante que o diretório exista
-if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
-
-// Configuração do armazenamento
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadDir);
-  },
-  filename: (req, file, cb) => {
-    const uniqueName = Date.now() + "-" + file.originalname.replace(/\s/g, "_");
-    cb(null, uniqueName);
-  }
-});
-
-const upload = multer({ storage });
 
 
 async function getPostById(req, res) {
@@ -30,9 +8,9 @@ async function getPostById(req, res) {
     
     // Query pra buscar UM item pelo ID, juntando nome do autor
     const query = `
-      SELECT c.*, m.me_nome AS co_publicante
+      SELECT c.*, m.me_nome AS autor_nome
       FROM conteudo c
-      LEFT JOIN membros m ON c.co_publicante = m.id_membro
+      LEFT JOIN membros m ON c.co_autor = m.id_membro
       WHERE c.id_conteudo = $1
     `;
     
@@ -55,27 +33,22 @@ async function getPostById(req, res) {
 const router = express.Router();
 
 // CREATE
-router.post("/", upload.single("imagem"), async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const { co_titulo, co_publicante, co_autor, co_pdf, co_citacao, co_doi, co_data, co_lide,
+    const { co_titulo, co_autor, co_pdf, co_citacao, co_doi, co_data, co_lide,
             co_status, co_data_inicio, co_data_termino, co_objetivo, co_requisitos,
-            co_plano_trabalho, co_atividades, co_tipo_conteudo, co_conteudo} = req.body;
-
-            
+            co_plano_trabalho, co_atividades, co_tipo_conteudo } = req.body;
 
     if (!co_titulo || !co_tipo_conteudo) 
       return res.status(400).json({ error: "Título e tipo de conteúdo são obrigatórios" });
-     
-    const imagem = req.file ? req.file.filename : null;
 
     const result = await pool.query(
   `INSERT INTO conteudo
-  (co_titulo, co_publicante, co_autor, co_tipo_conteudo, co_pdf, co_citacao, co_doi, co_lide, co_status,
-   co_data_inicio, co_data_termino, co_objetivo, co_requisitos, co_plano_trabalho, co_atividades, co_imagem, co_conteudo)
-   VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17) RETURNING *`,
+  (co_titulo, co_autor, co_tipo_conteudo, co_pdf, co_citacao, co_doi, co_lide, co_status,
+   co_data_inicio, co_data_termino, co_objetivo, co_requisitos, co_plano_trabalho, co_atividades)
+   VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14) RETURNING *`,
   [
     co_titulo,
-    co_publicante,
     co_autor,
     co_tipo_conteudo,
     co_pdf || null,
@@ -88,9 +61,7 @@ router.post("/", upload.single("imagem"), async (req, res) => {
     co_objetivo || null,
     co_requisitos || null,
     co_plano_trabalho || null,
-    co_atividades || null,
-    imagem || null,
-    co_conteudo || null
+    co_atividades || null
   ]
 );
 
@@ -109,7 +80,7 @@ router.get("/", async (req, res) => {
       SELECT c.*, t.tc_conteudo, m.me_nome AS autor_nome
       FROM conteudo c
       LEFT JOIN tipo_conteudo t ON c.co_tipo_conteudo = t.id_tipo_conteudo
-      LEFT JOIN membros m ON c.co_publicante = m.id_membro
+      LEFT JOIN membros m ON c.co_autor = m.id_membro
     `;
     const params = [];
 
@@ -130,47 +101,53 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", getPostById); // Isso vai pegar o /posts/7
 
-router.put("/:id", upload.single("imagem"), async (req, res) => {
+// UPDATE
+router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
+
     const fields = [];
     const values = [];
     let index = 1;
 
-    // Se houver nova imagem
-    if (req.file) {
-      fields.push(`co_imagem = $${index}`);
-      values.push(req.file.filename);
-      index++;
-    }
-
-    // Atualiza os outros campos do body
     for (const [key, value] of Object.entries(req.body)) {
+      // Ignorar campos vazios ou nulos (evitar "")
       if (value === "" || value === null || value === undefined) continue;
-      const parsedValue = !isNaN(value) ? Number(value) : value;
+
+      // Converter para número quando fizer sentido (evita erro em INT)
+      const parsedValue =
+        !isNaN(value) && value !== "" && value !== null
+          ? Number(value)
+          : value;
+
       fields.push(`${key} = $${index}`);
       values.push(parsedValue);
       index++;
     }
 
     if (fields.length === 0) {
-      return res.status(400).json({ error: "Nenhum dado válido enviado" });
+      return res.status(400).json({ error: "Nenhum dado válido enviado para atualização" });
     }
 
+    // Adiciona ID ao final
     values.push(Number(id));
+
     const query = `
       UPDATE conteudo
       SET ${fields.join(", ")}
       WHERE id_conteudo = $${index}
       RETURNING *;
     `;
+
     const result = await pool.query(query, values);
+
     if (result.rows.length === 0) {
       return res.status(404).json({ error: "Conteúdo não encontrado" });
     }
+
     res.json(result.rows[0]);
   } catch (err) {
-    console.error("Erro ao atualizar conteúdo:", err.message);
+    console.error("Erro ao atualizar conteúdo:", err.message, err);
     res.status(500).json({ error: "Erro ao atualizar conteúdo" });
   }
 });
