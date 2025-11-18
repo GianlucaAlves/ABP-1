@@ -14,7 +14,7 @@ if (form) {
       const res = await fetch("http://localhost:3000/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password}),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await res.json();
@@ -29,15 +29,8 @@ if (form) {
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
 
-  
       // redirecionar
-       if (data.user.isAdmin === true) {
-         window.location.href = "dashboard_html/dashboardadmin.html";
-       } else {
-         window.location.href = "dashboard_html/dashboarduser.html";
-       }
-       
-      
+      window.location.href = "./dashboard_html/dashboard.html";
     } catch (err) {
       console.error(err);
       errorMessage.textContent = "Falha na conexão com o servidor.";
@@ -67,7 +60,7 @@ if (window.location.pathname.endsWith("dashboard.html")) {
     logoutBtn.addEventListener("click", () => {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      window.location.href = "login.html";
+      window.location.href = "../dashboard_html/login.html";
     });
   }
 }

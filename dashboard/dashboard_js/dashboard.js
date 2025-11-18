@@ -1,36 +1,55 @@
-// =====================
-// PROTEÇÃO UNIVERSAL
-// =====================
-const token = localStorage.getItem("token");
-const userData = JSON.parse(localStorage.getItem("user"));
+// Verifica se o usuário está logado
+  const token = localStorage.getItem("token");
+  if (!token) {
+    window.location.href = "login.html";
+  }
+// Busca dados do usuário logado
+async function loadUserInfo() {
+  try {
+    const res = await fetch("http://localhost:3000/dashboard", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
-// Se não estiver logado → volta para login
-if (!token || !userData) {
-    window.location.href = "../login.html";
+    if (res.status === 401 || res.status === 403) {
+      alert("Sessão expirada ou inválida. Faça login novamente.");
+      localStorage.removeItem("token");
+      window.location.href = "login.html";
+      return;
+    }
+
+    const user = await res.json();
+
+    document.getElementById("userName").textContent = user.name;
+    document.getElementById("userEmail").textContent = user.email;
+    document.getElementById("userRole").textContent =
+      user.role === "admin" ? "Administrador" : "Membro";
+  } catch (error) {
+    console.error("Erro ao carregar informações:", error);
+  }
 }
 
-
-// =====================
-// PREENCHER O DASHBOARD
-// =====================
 document.addEventListener("DOMContentLoaded", () => {
+  const userName = document.getElementById("userName");
+  const userEmail = document.getElementById("userEmail");
+  const userRole = document.getElementById("userRole");
+  const logoutBtn = document.getElementById("logoutBtn");
 
-    const userNameEl = document.getElementById("userName");
-    const userEmailEl = document.getElementById("userEmail");
-    const userRoleEl  = document.getElementById("userRole");
+  // Recupera dados do usuário do localStorage
+  const userData = JSON.parse(localStorage.getItem("userData"));
 
-    if (userNameEl)  userNameEl.textContent = userData.me_nome;
-    if (userEmailEl) userEmailEl.textContent = userData.me_email;
-    if (userRoleEl)  userRoleEl.textContent =
-        userData.me_administrador ? "Administrador" : "Membro";
+  // Se não houver login, redireciona para a página de login
+  if (!userData) {
+    window.location.href = "login.html";
+    return;
+  }
 
-    // BOTÃO LOGOUT
-    const logoutBtn = document.getElementById("logoutBtn");
-    if (logoutBtn) {
-        logoutBtn.addEventListener("click", () => {
-            localStorage.removeItem("token");
-            localStorage.removeItem("user");
-            window.location.href = "../login.html";
-        });
-    }
+ 
+
+  // Botão de sair
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("token");
+    window.location.href = "../login.html";
+  });
 });
+
+  loadUserInfo();
