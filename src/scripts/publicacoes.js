@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
  
             <img class="pub-cover"
               <img src="http://localhost:3000/uploads/${pub.co_imagem}" alt="${pub.co_titulo}">
-            >
+            
  
             <h2 class="pub-title">${pub.co_titulo}</h2>
             <p class="pub-authors">

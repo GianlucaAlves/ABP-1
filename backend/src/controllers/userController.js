@@ -43,7 +43,7 @@ export async function loginUser(req, res) {
     const { email, password } = req.body;
 
     const user = await findUserByEmail(email);
-    console.log("Usuário encontrado:", user);
+   
     
     if (!user) {
       return res.status(401).json({ error: "Usuário não encontrado." });
@@ -53,7 +53,7 @@ export async function loginUser(req, res) {
     if (!passwordMatch) {
       return res.status(401).json({ error: "Senha incorreta." });
     }
-
+    console.log("Usuário encontrado:", user);
     console.log("Valor de me_administrador antes do token:", user.me_administrador);
     // Gerar token JWT
     const token = jwt.sign(

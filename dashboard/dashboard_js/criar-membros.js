@@ -21,7 +21,7 @@ const isAdmin =
 
 if (!token || !isAdmin) {
   alert("Acesso negado. Apenas administradores podem criar membros.");
-  window.location.href = "/dashboard/dashboard.html"; // ajuste conforme seu caminho
+  window.location.href = "../dashboard_html/dashboarduser.html"; // ajuste conforme seu caminho
 }
 
 // =======================

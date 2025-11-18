@@ -19,13 +19,15 @@ async function loadMembros(cargo = "") {
       <td>${m.ca_nome_cargo || ""}</td>
       <td>${m.me_administrador ? "Sim" : "Não"}</td>
       <td class="actions">
-        <button class="edit" onclick="editMembro(${m.id_membro})">Editar</button>
+         <a href="editar-membro.html?id=${m.id_membro}">Editar</a>
         <button class="delete" onclick="deleteMembro(${m.id_membro})">Excluir</button>
       </td>
     `;
     tbody.appendChild(tr);
   });
 }
+
+
 
 // EXCLUIR MEMBRO
 async function deleteMembro(id) {

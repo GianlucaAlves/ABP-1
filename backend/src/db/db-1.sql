@@ -64,8 +64,9 @@ CREATE TABLE conteudo (
 INSERT INTO cargo (ca_nome_cargo) VALUES
   ('Pesquisador'),
   ('Coordenador'),
-  ('Assistente');
-
+  ('Bolsista'),
+  ('Doutorando'),
+  ('Mestrando');
 --STATUS
 INSERT INTO status (st_nome_status) VALUES
   ('Concluído'),
